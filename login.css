@@ -15,7 +15,7 @@ body{
     align-items: center;
     height: 100vh;
 }
-img{
+.imgPrincipal{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -29,7 +29,6 @@ img{
     justify-content: space-between;
     align-items: center;
     position: relative;
-
 }
 .content::before{
     content:"";
@@ -42,9 +41,8 @@ img{
     left: 0;
 }
 .title{
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
-    text-transform: capitalize;
 }
 .title-primary{
     color: #fff;
@@ -171,10 +169,11 @@ img{
     width: 55%;
 }
 .form input{
-    height: 45px;
+    height: 35px;
     width: 100%;
     border: none;
     background-color: #ecf0f1;
+    border-radius: 10px;
 
 }
 input:-webkit-autofill{
@@ -200,6 +199,7 @@ input:-webkit-autofill{
     display: flex;
     align-items: center;
     margin: 8px;
+    border-radius: 10px;
 }
 .icon-modify{
     color: #3D7C89;
@@ -637,4 +637,21 @@ input:-webkit-autofill{
     }
 }
 
-
+.bg-info{
+    background-color: #3D7C89 !important;
+}
+.fs-6{
+    font-size: 0.9em !important;
+}
+.h-75{
+    min-height: 80%;
+}
+.form-select{
+    margin-left: 8px !important;
+}
+.w-0{
+    max-width: 95% !important;
+}
+.h-0{
+    height: 20% !important;
+}
