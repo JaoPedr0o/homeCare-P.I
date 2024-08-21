@@ -174,7 +174,8 @@ body{
     border: none;
     background-color: #ecf0f1;
     border-radius: 10px;
-
+    outline: none;
+    margin-left: 4px;
 }
 .form-radio{
     max-height: 0.9rem;
