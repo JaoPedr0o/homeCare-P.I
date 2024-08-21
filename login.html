@@ -21,7 +21,7 @@
             
             <div class="second-column" id="containerCad">
                 <h2 class="title title-second text-decoration-underline">Criar minha conta</h2>
-                <p class="fw-light fs-6 mt-3">Selecione a categoria de seu cadastro:</p>
+                <p class="fw-light fs-6">Selecione a categoria de seu cadastro:</p>
                 
                 
                 
@@ -33,22 +33,31 @@
                 
                 
                   <form class="form mt-3" id="formCad">
-                    <label class="label-input" for="">
-                        <input type="text" placeholder="Nome Completo" required> 
+                    <label class="label-input" for="nome">
+                        <input type="text" placeholder="Nome Completo" name="nome" required> 
                     </label>
-                    <label class="label-input" for="">
-                        <input type="text" placeholder="CPF" required> 
+                    <label class="label-input" for="cpf">
+                        <input type="text" placeholder="CPF" name="nome" required> 
+                    </label>
+                    <label class="label-input" for="data_nascimento">
+                        <input type="date" name="data-nasc" required> 
                     </label>
                     <select class="form-select label-input w-0" id="estados-select" aria-label="Default select example">
                         <option value="nda">UF</option>
                     </select>
-                    <label class="label-input" for="">
+                    <div class="d-flex m-3">
+                        <input class="form-radio"  type="radio" id="feminino" name="genero" value="feminino" required>
+                        <label for="feminino">Feminino</label>
+                        <input class="form-radio" type="radio" id="masculino" name="genero" value="masculino" required>
+                        <label for="masculino">Masculino</label>
+                    </div>
+                    <label class="label-input" for="email">
                         <i class="fa-solid fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" placeholder="Email" name="email" required>
                     </label>
-                    <label class="label-input" for="">
+                    <label class="label-input" for="senha">
                         <i class="fa-solid fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha" required> 
+                        <input type="password" placeholder="Senha" name="senha" required> 
                     </label>
                 </form>
                 <button class="btn btn-primary">Registrar</button>

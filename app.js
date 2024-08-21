@@ -35,6 +35,7 @@ async function buscarEstados() {
         estados.forEach(estado => {
             const option = document.createElement("option");
             option.value = estado.sigla;
+            option.name = estado.sigla;
             option.textContent = estado.sigla;
             selectElement.appendChild(option);
         });
