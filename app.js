@@ -49,25 +49,15 @@ window.onload = buscarEstados;
 
 
 //função para alterar o cadastro de paciente para profissional
-let selectCat = document.getElementById("selectCategoria")
+let selectCat = document.getElementById("tipo")
 selectCat.addEventListener('change', () => {
     valor = selectCat.value
     if (valor == 2) {
-        function criarLabel(){
-            const item = document.createElement("label")
-            item.innerHTML = `<input type="text" placeholder="Coren" required>`
-            item.classList.add('label-input')
-            item.id = 'labelJS'
-            document.getElementById("formCad").appendChild(item)
-        }
-        criarLabel()
+       let coren = document.getElementById('corenLabel')
+       coren.style.display = "block"
     }
     else{
-        function remover(){
-            form = document.getElementById("formCad")
-            label = document.getElementById('labelJS')
-            form.removeChild(label)
-        }
-        remover()
+       let coren = document.getElementById('corenLabel')
+       coren.style.display = "none"
     }
 })
