@@ -61,3 +61,9 @@ selectCat.addEventListener('change', () => {
        coren.style.display = "none"
     }
 })
+
+//Para limpar o formulário
+window.addEventListener('load', () => {
+    const formulario = document.getElementById('formCad');
+    formulario.reset(); // Limpa o formulário
+});
