@@ -41,7 +41,7 @@ function validarCoren($coren) {
     $coren = preg_replace('/[^0-9]/', '', $coren);
 
     // Verifica se o CORÉN tem 7 ou 8 dígitos e um estado (UF) de 2 letras
-    if (strlen($coren) < 7 || strlen($coren) > 8) {
+    if (strlen($coren) != 6) {
         return false;
     }
 
