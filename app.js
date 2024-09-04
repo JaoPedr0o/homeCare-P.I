@@ -18,13 +18,14 @@ btnSignup.addEventListener('click', function() {
 });
 
 
+
 // Função para buscar os estados da API do IBGE
 async function buscarEstados() {
     const url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
     try {
         const response = await fetch(url);
         const estados = await response.json();
-
+        
         const selectElement = document.getElementById("estados-select");
 
         // Ordenar estados por nome
