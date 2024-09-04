@@ -44,9 +44,7 @@ function validarCoren($coren) {
     if (strlen($coren) != 6) {
         return false;
     }
-
-    // Validação adicional pode ser implementada dependendo do padrão regional
-    return true; // Implementar lógica específica se necessário
+    return true; 
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -54,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
     $data_nascimento = $_POST['data_nascimento'];
-    $sexo = $_POST['sexo']; // O sexo é obtido a partir dos inputs do tipo rádio
+    $sexo = $_POST['sexo']; 
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); // Criptografia da senha
     $estado = $_POST['estado'];

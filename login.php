@@ -38,7 +38,7 @@
             Criar minha conta
           </h2>
           <p class="fw-light fs-6">Selecione a categoria de seu cadastro:</p>
-          <form action="cadastrar.php" class="form mt-3 d-flex justify-content-center" id="formCad"             method="post">
+          <form action="cadastrar.php" class="form mt-3 d-flex justify-content-center" id="formCad" method="post">
               <div class="d-flex justify-content-center w-100">
                 <select class="w-50 form-select bg-info text-white d-flex justify-content-center"
                   name="tipo"
@@ -113,11 +113,11 @@
           <form class="form" action="validarLogin.php" method="post">
             <label class="label-input p-1" for="">
               <i class="fa-solid fa-envelope icon-modify"></i>
-              <input type="email" placeholder="Email" />
+              <input type="text" placeholder="Email" name="email"/>
             </label>
             <label class="label-input p-1" for="">
               <i class="fa-solid fa-lock icon-modify"></i>
-              <input type="password" placeholder="Senha" />
+              <input type="password" placeholder="Senha" name="senha"/>
             </label>
             <a class="password" href="#">Esqueceu sua senha?</a>
             <button id="loginButton" class="btn btn-second">Logar</button>

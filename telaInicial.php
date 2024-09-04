@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="nav-item" style="position: fixed; bottom: 0;">
-                            <a  class="nav-link" href="login.html">
+                            <a  class="nav-link" href="login.php">
                                 <i class="fa-solid fa-door-closed"></i>
                                 <span class="sidebar-text">Sair</span>
                             </a>   
