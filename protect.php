@@ -1,10 +1,10 @@
-<?php 
+<?php include 'necessarioLogin.php';
 
 if(!isset($_SESSION)){
     session_start();
 }
 
 if(!isset($_SESSION['id'])){
-    die("Você não pode acessar essa Página, pois não está logado.<p><a href=\"login.php\">Entrar</a></p>");
+    die("");
 }
 ?>
