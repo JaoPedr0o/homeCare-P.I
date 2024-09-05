@@ -1,4 +1,5 @@
-<?php include 'sidebar.php'; ?>
+<?php include 'protect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,13 +11,15 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-            <div class="col-md-9 col-lg-10 main-content">
-                <!-- Conteúdo principal -->
-                <h1>PERFIL</h1>
-            </div>
+    <div class="col-md-9 col-lg-10 main-content">
+    <?php include 'sidebar.php' ?>
+        <!-- Conteúdo principal -->
+        <h1>PERFIL</h1>
+    </div>
 
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
