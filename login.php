@@ -25,11 +25,10 @@
     <div class="container">
       <div class="content first-content h-75">
         <div class="first-column">
+          <img class="logo" src="loginIMG/logo.png" alt=""> 
           <h2 class="title-primary">Bem-Vindo!</h2>
           <p class="description description-primary">
-            Para acesssar nossos serviços
-          </p>
-          <p class="description description-primary">faça um cadastro.</p>
+            Para acesssar nossos serviços,<br>faça um cadastro.</p>
           <button id="signin" class="btn btn-blue-side">Fazer Login</button>
         </div>
         <!--First-Column-->
@@ -94,10 +93,7 @@
         <div class="first-column">
           <h2 class="title title-primary">Olá, amigo(a)!</h2>
           <p class="description description-primary">
-            Insira seus dados pessoais
-          </p>
-          <p class="description description-primary">
-            e começe a navegar pelo nosso site.
+            Insira seus dados<br>e começe a navegar pelo nosso site.
           </p>
           <button id="signup" class="btn btn-blue-side">Cadastre-se</button>
         </div>
@@ -153,3 +149,4 @@
                         </a>
                     </ul>
                 </div>-->
+

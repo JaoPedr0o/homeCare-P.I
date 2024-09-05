@@ -21,6 +21,13 @@ body{
     object-fit: cover;
     position: absolute;
 }
+.logo{
+    width: 35%;
+    height:35%;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+}
 .content{
     background-color: white;
     border-radius: 15px;
@@ -88,7 +95,7 @@ body{
     border-radius: 5rem;
     text-transform: uppercase;
     color: #fff;
-    font-size: 0.6rem;
+    font-size: 1.0rem;
     padding: 1.5% 6%;
     cursor: pointer;
     font-weight: bold;
@@ -110,7 +117,7 @@ body{
     border-radius: 5rem;
     text-transform: uppercase;
     color: #ffff;
-    font-size: 0.6rem;
+    font-size: 1.0rem;
     padding: 3% 6%;
     cursor: pointer;
     font-weight: bold;
