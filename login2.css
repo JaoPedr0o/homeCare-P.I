@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
-    
+    overflow-x: hidden; /* Remove qualquer scroll horizontal desnecessário */
 
 }
 *{
@@ -650,9 +650,7 @@ input:-webkit-autofill{
     .sidebar:hover + .main-content {
         margin-left: 200px;
     }
-    .card {
-        flex: 1 1 100%; /* 1 card por linha em telas pequenas */
-    }
+
 }
 
 .bg-info{
@@ -677,12 +675,11 @@ input:-webkit-autofill{
 .employee-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-    
-
-   
+    justify-content: center; /* Centraliza os cards no container */
+    gap: 20px;               /* Espaçamento entre os cards */
+    padding: 20px;           /* Espaçamento interno do container para evitar que os cards fiquem colados nas bordas */
 }
+
 
 
 /* Estilo dos cards */
@@ -693,6 +690,8 @@ input:-webkit-autofill{
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     flex: 1 1 calc(33.333% - 1rem); /* Ajuste para 3 cards por linha */
     box-sizing: border-box;
+    max-width: 100%; /* Impede que o card ultrapasse a largura da tela */
+    overflow: hidden; /* Garante que o conteúdo não "vaze" */
 }
 
 .card-body {
@@ -710,6 +709,23 @@ input:-webkit-autofill{
 }
 
 /* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100% !important; /* 1 card por linha em telas pequenas */
+        box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
+    
+    }
+    .employee-container {
+        padding: 10px; /* Adiciona um pequeno padding ao container dos cards */
+        width: 90%;
+    }
+    
+}
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Card ocupa 50% da largura em telas médias */
+    }
+}
 @media (max-width: 1024px) {
     .card {
         flex: 1 1 calc(50% - 1rem); /* 2 cards por linha em telas médias */

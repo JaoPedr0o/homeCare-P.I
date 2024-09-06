@@ -68,7 +68,7 @@ try {
             </div>
 
             <!-- Conteúdo Principal -->
-            <div class="col-md-9 col-lg-10 main-content">
+            <div class=" col-md-9 col-lg-10 main-content">
                 <h1>Conteúdo Principal</h1>
                 <div id="resultado"></div>
 
