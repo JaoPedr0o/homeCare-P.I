@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.7.1.js" type="text/javascript"></script>
     <script src="js/jquery.mask.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="login.css"/>
+    <link rel="stylesheet" href="login2.css"/>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#cpf').mask("000.000.000-00")
