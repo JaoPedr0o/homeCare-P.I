@@ -1,0 +1,46 @@
+.aviso{
+    color: #000000;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.btn-second{
+    border-radius: 5rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.0rem;
+    padding: 1.5% 6%;
+    cursor: pointer;
+    font-weight: bold;
+    width: 30%;
+    align-self: center !important;
+    align-items: center !important;
+    margin-top: 3%;
+    margin-left: 34.5%;
+    background-color: #3D7C89;
+    border: 1px solid #3D7C89;
+    transition: background-color 0.5s;
+    text-align: center;
+}
+
+.btn-second:hover{
+    background-color: #ffffff;
+    border: 1px solid #3D7C89;
+    color: #3D7C89;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+a:hover {
+    text-decoration: none; /* Garante que o sublinhado não apareça ao passar o mouse */
+}
+
+.link{
+    color: #fff;
+}
+
+.link:hover{
+    color: #3D7C89;
+}
