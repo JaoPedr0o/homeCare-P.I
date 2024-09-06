@@ -45,6 +45,7 @@ function validarCoren($coren) {
         return false;
     }
     return true; 
+    return true; 
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -52,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
     $data_nascimento = $_POST['data_nascimento'];
+    $sexo = $_POST['sexo']; 
     $sexo = $_POST['sexo']; 
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); // Criptografia da senha

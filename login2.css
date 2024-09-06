@@ -2,6 +2,7 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    
 
 }
 *{
@@ -568,11 +569,15 @@ input:-webkit-autofill{
     bottom: 0;
     left: 0;
     z-index: 100;
-    height: 100%;
+    
     background-color: #3D7C89;
     transition: width 0.3s;
     width: 80px; /* Largura quando não expandido */
     overflow-x: hidden; /* Evita rolagem horizontal */
+   
+    height: 100vh; /* Sidebar ocupa a altura total da página */
+    
+    padding-top: 20px;
 }
 
 .sidebar:hover {
@@ -581,6 +586,7 @@ input:-webkit-autofill{
 
 .sidebar-content {
     padding: 10px 0;
+
 }
 
 .nav-link {
@@ -618,6 +624,7 @@ input:-webkit-autofill{
 /* Adicionando margem ao conteúdo principal */
 .main-content {
     margin-left: 80px; /* Largura da sidebar quando não expandido */
+    padding: 20px;
     transition: margin-left 0.3s;
 }
 
@@ -627,7 +634,9 @@ input:-webkit-autofill{
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 60px;
+        width: 30x;
+        margin-left: 0;
+        height: 1000vh;
     }
 
     .sidebar:hover {
@@ -635,11 +644,14 @@ input:-webkit-autofill{
     }
 
     .main-content {
-        margin-left: 60px;
+        margin-left: 70px;
     }
 
     .sidebar:hover + .main-content {
         margin-left: 200px;
+    }
+    .card {
+        flex: 1 1 100%; /* 1 card por linha em telas pequenas */
     }
 }
 
@@ -667,17 +679,18 @@ input:-webkit-autofill{
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
-    margin-left: 100px; /* Ajuste conforme a largura da sua barra lateral */
+    
+
+   
 }
 
 
 /* Estilo dos cards */
 .card {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid #3D7C89;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem;
     flex: 1 1 calc(33.333% - 1rem); /* Ajuste para 3 cards por linha */
     box-sizing: border-box;
 }
@@ -703,9 +716,4 @@ input:-webkit-autofill{
     }
 }
 
-@media (max-width: 768px) {
-    .card {
-        flex: 1 1 100%; /* 1 card por linha em telas pequenas */
-    }
-}
 
