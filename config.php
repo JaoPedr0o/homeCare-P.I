@@ -1,7 +1,7 @@
 <?php
 // config.php
 $host = 'localhost'; // ou o endereço do seu servidor MySQL
-$db   = 'meubanco';  // nome do seu banco de dados
+$db   = 'homecare';  // nome do seu banco de dados
 $user = 'root';      // usuário do MySQL
 $pass = '';          // senha do MySQL
 

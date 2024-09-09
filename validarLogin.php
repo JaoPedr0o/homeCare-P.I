@@ -23,9 +23,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $stmt->execute();
 
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-        var_dump($usuario);
-        var_dump($usuario['senha']);
-
+        
         // Verificação da senha usando password_verify
         if ($usuario && password_verify($senha, $usuario['senha'])) {
             if (!isset($_SESSION)) {
@@ -62,7 +60,6 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         <link rel="stylesheet" href="necessarioLogin.css">
     </head>
     <body>
-
         <!-- Mensagem de aviso -->
         <h2 class="aviso">
             Você não pode acessar essa página, 

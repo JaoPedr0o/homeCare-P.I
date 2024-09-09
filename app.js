@@ -4,10 +4,6 @@ var btnLogar = document.querySelector('#loginButton');
 
 var body = document.querySelector("body");
 
-btnLogar.addEventListener('click', function() {
-    window.location.href = 'telaInicial.html';  // Redireciona para a tela de login
-});
-
 btnSignin.addEventListener('click', function() {
     body.className = "sign-in-js";
     
@@ -16,9 +12,6 @@ btnSignin.addEventListener('click', function() {
 btnSignup.addEventListener('click', function() {
     body.className = "sign-up-js";
 });
-
-
-
 // Função para buscar os estados da API do IBGE
 async function buscarEstados() {
     const url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
@@ -45,8 +38,6 @@ async function buscarEstados() {
 }
 // Chama a função para buscar os estados quando a página carrega
 window.onload = buscarEstados;
-
-
 
 //função para alterar o cadastro de paciente para profissional
 let selectCat = document.getElementById("tipo")
