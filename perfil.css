@@ -1,0 +1,175 @@
+body {
+    font-family: sans-serif;
+    background-color: #e0e0e0 !important; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 70vw !important; 
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 600px;
+}
+
+.header-imgs {
+    position: relative;
+    color: #333;
+    width: 100%; 
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-imgs #perfil-img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    bottom: -30%;
+    left: 30px;
+}
+
+.header-imgs #banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header-content {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.header-imgs p {
+    margin-top: 20px;
+    text-align: left;
+    text-align: justify;
+}
+
+.header-details {
+    width: 100%;
+    display: flex;
+    border-top: 20px solid #3D7C89; 
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px 40px; 
+    height: 400px;
+}
+
+.info {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border-top: 20px solid #3D7C89; 
+    width: 350px;
+    height: 340px;
+}
+
+.info .item {
+    margin-bottom: 15px;
+}
+
+.info .item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.info .item p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+.actions .btn {
+    background-color: #3D7C89; /* Nova cor para o botão */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0; /* Remove o arredondamento */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.actions .btn:hover {
+    background-color: #2f5f6a; /* Cor mais escura ao passar o mouse */
+}
+
+.about-content {
+    width: 50%;
+    text-align: justify;
+}
+
+.skills-and-resume {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Adiciona espaço entre skills e resume */
+    margin-top: 20px;
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+}
+
+.skills,
+.resume {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 40px;
+    border-radius: 0; /* Remove o arredondamento */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 60%; 
+    border-top: 20px solid #3D7C89; /* Faixa colorida no topo */
+    height: 300px;
+}
+
+.skills h2,
+.resume h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 100%;
+    height: 8px !important;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 5px;
+}
+
+.progress .bar {
+    height: 100%;
+    background-color: #3D7C89; /* Nova cor para a barra de progresso */
+    width: 80%;
+}
+
+.resume p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+}
