@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="style.global.css">
 </head>
 
 <body>
@@ -35,14 +36,14 @@
                     <!-- Conteúdo da about -->
                     <div class="about-content">
                         <h1>Rasputia Nogueira</h1>
-                        <p>Cuidadora</p>
+                        <h3>Cuidadora</h3>
                         
-                        <p>Rasputia Nogueira, nascida em 1988 em Belo Horizonte, é enfermeira formada pela Universidade Federal de Minas Gerais. Desde 2010, tem se dedicado ao atendimento de pacientes em diversas áreas de saúde, destacando-se por sua empatia e profissionalismo. Em 2015, recebeu o prêmio de "Enfermeira do Ano" pelo Hospital das Clínicas de Belo Horizonte. Além de seu trabalho clínico, Rasputia participa ativamente em projetos comunitários de educação em saúde.</p>
+                        <p>Rasputia Nogueira, nascida em 1988 em Belo Horizonte, é enfermeira formada pela Universidade Federal de Minas Gerais. Desde 2010, tem se dedicado ao atendimento de pacientes em diversas áreas de saúde, destacando-se por sua empatia e profissionalismo. Em 2015, recebeu o prêmio de "Enfermeira do Ano" pelo Hospital das Clínicas de Belo Horizonte.</p>
                         
-                        <div class="actions">
+                        <!--<div class="actions">
                             <button class="btn">Enviar mensagem</button>
                             <button class="btn">+ Seguir</button>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Seção de informações ao lado direito -->
