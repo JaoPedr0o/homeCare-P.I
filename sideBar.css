@@ -1,0 +1,67 @@
+/* Estilo da Sidebar */
+:root {
+    font-size: 62.5%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #3D7C89;
+    transition: width 0.3s;
+    width: 80px; 
+    overflow-x: hidden; 
+    height: 100vh; 
+    padding-top: 20px;
+}
+
+.sidebar:hover {
+    width: 250px; 
+}
+
+.sidebar-content {
+    padding: 10px 0;
+}
+
+.nav-link {
+    color: #adb5bd;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    background-color: #fff;
+    color: #3D7C89;
+}
+
+.nav-link i {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.sidebar-text {
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.sidebar:hover .sidebar-text {
+    opacity: 1;
+}
+
+.sidebar .sidebar-text {
+    opacity: 0;
+}
+
+.main-content {
+    margin-left: 80px; 
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar:hover + .main-content {
+    margin-left: 250px; 
+}

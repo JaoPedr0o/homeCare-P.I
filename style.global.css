@@ -1,19 +1,15 @@
-:root {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    font-family: 'Open Sans', sans-serif;
     /* Padroniza o font size para 10px = 1rem */
     font-size: 62.5%;
 
     /* Cores principais */
     --primary-blue: #3D7C89;
   
-    /* Cores de texto */
-    --text-color-black: #000;
-    --text-color-black: #fff;
+    --black: #000;
+    --white: #fff;
   
     /* Cores de fundo */
     --background-color: #e0e0e0;
@@ -29,7 +25,22 @@
   
     /* Fontes */
     --font-family: 'Arial', sans-serif;
-    --font-size-small: 12px;
-    --font-size-medium: 16px;
-    --font-size-large: 24px;
+
+    --font-size-s1: 10px;
+    --font-size-s2: 12px;
+    --font-size-s3: 14px;
+
+    --font-size-m1: 16px;
+    --font-size-m2: 18px;
+    --font-size-m3: 20px;
+
+    --font-size-l1: 22px;
+    --font-size-l2: 24px;
+    --font-size-l3: 26px;
   }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}

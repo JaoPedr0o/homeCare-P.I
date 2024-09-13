@@ -559,118 +559,78 @@ input:-webkit-autofill{
    }
 }
 
-
-/*TELA INICIAL*/
-
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    
-    background-color: #3D7C89;
-    transition: width 0.3s;
-    width: 80px; /* Largura quando não expandido */
-    overflow-x: hidden; /* Evita rolagem horizontal */
-   
-    height: 100vh; /* Sidebar ocupa a altura total da página */
-    
-    padding-top: 20px;
-}
-
-.sidebar:hover {
-    width: 250px; /* Largura quando expandido */
-}
-
-.sidebar-content {
-    padding: 10px 0;
-
-}
-
-.nav-link {
-    color: #adb5bd;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.nav-link:hover {
-    background-color: #fff;
-    color: #3D7C89;
-}
-
-.nav-link i {
-    font-size: 1.5rem;
-    margin-right: 10px;
-}
-
-.sidebar-text {
-    display: inline-block;
-    transition: opacity 0.3s;
-}
-
-.sidebar:hover .sidebar-text {
-    opacity: 1;
-}
-
-.sidebar .sidebar-text {
-    opacity: 0;
-}
-
-/* Adicionando margem ao conteúdo principal */
-.main-content {
-    margin-left: 80px; /* Largura da sidebar quando não expandido */
-    padding: 20px;
-    transition: margin-left 0.3s;
-}
-
-.sidebar:hover + .main-content {
-    margin-left: 250px; /* Largura da sidebar quando expandido */
-}
-
+/* Estilos para Tablets */
 @media (max-width: 768px) {
     .sidebar {
-        width: 30x;
-        margin-left: 0;
-        height: 1000vh;
+        width: 100%; /* Largura da sidebar ao ocupar a largura total da tela */
+        height: auto; /* Ajusta a altura para acomodar o conteúdo */
+        top: 0;
+        left: 0;
+        position: relative; /* Muda para relativo para flutuar no topo */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os itens na sidebar */
     }
 
     .sidebar:hover {
-        width: 200px;
+        width: 100%; /* Expande para a largura total */
     }
 
     .main-content {
-        margin-left: 70px;
+        margin-left: 0; /* Remove a margem esquerda em telas menores */
+        margin-top: 80px; /* Adiciona margem superior para acomodar a sidebar no topo */
     }
 
-    .sidebar:hover + .main-content {
-        margin-left: 200px;
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-
 }
 
-.bg-info{
+/* Responsividade para celulares menores */
+@media (max-width: 350px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar:hover {
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 70px;
+    }
+}
+
+.bg-info {
     background-color: #3D7C89 !important;
 }
-.fs-6{
+
+.fs-6 {
     font-size: 0.9em !important;
 }
-.h-75{
+
+.h-75 {
     min-height: 95%;
 }
-.form-select{
+
+.form-select {
     margin-left: 8px !important;
 }
-.w-0{
+
+.w-0 {
     max-width: 95% !important;
 }
-.h-0{
+
+.h-0 {
     height: 20% !important;
 }
+
 /* Contêiner dos cards */
 .employee-container {
     display: flex;
@@ -679,8 +639,6 @@ input:-webkit-autofill{
     gap: 20px;               /* Espaçamento entre os cards */
     padding: 20px;           /* Espaçamento interno do container para evitar que os cards fiquem colados nas bordas */
 }
-
-
 
 /* Estilo dos cards */
 .card {
@@ -713,19 +671,20 @@ input:-webkit-autofill{
     .card {
         flex: 1 1 100% !important; /* 1 card por linha em telas pequenas */
         box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
-    
     }
+
     .employee-container {
         padding: 10px; /* Adiciona um pequeno padding ao container dos cards */
         width: 90%;
     }
-    
 }
+
 @media (max-width: 992px) {
     .card {
         flex: 1 1 calc(50% - 20px); /* Card ocupa 50% da largura em telas médias */
     }
 }
+
 @media (max-width: 1024px) {
     .card {
         flex: 1 1 calc(50% - 1rem); /* 2 cards por linha em telas médias */
