@@ -20,7 +20,6 @@
     
     <link rel="stylesheet" href="perfil.css">
     <link rel="stylesheet" href="style.global.css">
-    <link rel="stylesheet" href="sideBar.css.css">
 </head>
 
 <body>
