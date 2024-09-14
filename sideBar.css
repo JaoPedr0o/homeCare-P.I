@@ -1,4 +1,5 @@
-/* Estilo da Sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
     font-size: 62.5%;
 }
@@ -8,43 +9,91 @@
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: #3D7C89;
-    transition: width 0.3s;
-    width: 80px; 
-    overflow-x: hidden; 
-    height: 100vh; 
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 8rem;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(290deg, var(--primary-blue) 70%, var(--white) 200%) !important;
+    border-right: 0.1rem solid var(--secondary-blue);
+    transition: all 0.4s;
 }
 
 .sidebar:hover {
-    width: 250px; 
+    width: 20rem;
 }
 
-.sidebar-content {
-    padding: 10px 0;
+.sidebar-content .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar-text-logo {
+    display: inline-block;
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.sidebar .sidebar-text-logo {
+    font-size: 2rem;
+    opacity: 0;
+}
+
+.sidebar:hover .sidebar-text-logo {
+    opacity: 1;
+    justify-content: center;
+}
+
+.settings {
+    position: absolute;
+    bottom: 1rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
 }
 
 .nav-link {
-    color: #adb5bd;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    color: var(--white);
     text-decoration: none;
-    border-radius: 5px;
+    gap: 1rem;
+    transition: all 0.5s;
 }
 
 .nav-link:hover {
-    background-color: #fff;
-    color: #3D7C89;
+    color: var(--white);
+    margin-left: 0.5rem;
+    background-color: #FFFFFF00;
 }
 
 .nav-link i {
     font-size: 2rem;
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .sidebar-text {
     display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
     transition: opacity 0.3s;
 }
 
@@ -52,16 +101,113 @@
     opacity: 1;
 }
 
-.sidebar .sidebar-text {
-    opacity: 0;
-}
-
 .main-content {
-    margin-left: 80px; 
-    padding: 20px;
+    margin-left: 8rem;
+    padding: 2rem;
     transition: margin-left 0.3s;
 }
 
 .sidebar:hover + .main-content {
-    margin-left: 250px; 
+    margin-left: 25rem;
+}
+
+@media (min-width: 0) and (max-width: 1024px) {
+    .sidebar {
+        display: flex;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100vw !important;
+        height: 5rem !important;
+        overflow-y: hidden;
+        background: linear-gradient(220deg,  var(--primary-blue) 70%, var(--white) 200%) !important;
+        justify-content: flex-start;
+        border-bottom: 0.1rem solid var(--secondary-blue);
+        transition: all 0.3s;
+    }
+
+    .logo {
+        width: 4rem;
+        height: 4rem;
+        margin-top: 0.4rem;
+        margin-right: 0.5rem;
+        align-self: center;
+    }
+
+    .settings {
+        margin-top: 0.4rem;
+    }
+
+    .sidebar-text-logo {
+        display: none;
+        font-size: 2.2rem;
+        color: var(--white);
+        font-weight: bold;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+    }
+
+    .sidebar .sidebar-text-logo {
+        font-size: 2rem;
+        opacity: 0;
+    }
+
+    .sidebar:hover .sidebar-text-logo {
+        opacity: 0;
+        justify-content: center;
+    }
+
+    .nav-link .settings {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+    }
+
+    .sidebar-content .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+        height: 5rem;
+    }
+
+    .sidebar-content {
+        display: flex;
+    }
+
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        font-size: 1rem;
+        text-decoration: none;
+        margin-bottom: 1.5rem;
+        transition: all 0.2s;
+        gap: 0rem;
+    }
+
+    .nav-link:hover {
+        color: var(--white);
+        background-color: #FFFFFF00;
+        border-radius: 0px;
+    }
+
+    .nav-link i {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    .sidebar .sidebar-text {
+        display: inline-block;
+        font-weight: bold;
+        opacity: 1;
+    }
+
+    .sidebar-content ul {
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        overflow-y: hidden !important;
+        gap: 0.2rem;
+    }
 }
