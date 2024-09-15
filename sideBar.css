@@ -16,7 +16,7 @@
     height: 100vh;
     overflow-x: hidden;
     background: linear-gradient(290deg, var(--primary-blue) 70%, var(--white) 200%) !important;
-    border-right: 0.1rem solid var(--secondary-blue);
+    border-right: 0.1rem solid var(--white);
     transition: all 0.4s;
 }
 
@@ -122,7 +122,7 @@
         overflow-y: hidden;
         background: linear-gradient(220deg,  var(--primary-blue) 70%, var(--white) 200%) !important;
         justify-content: flex-start;
-        border-bottom: 0.1rem solid var(--secondary-blue);
+        border-bottom: 0.1rem solid var(--white);
         transition: all 0.3s;
     }
 
