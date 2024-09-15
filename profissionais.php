@@ -4,6 +4,7 @@
 <?php
 // Conectar ao banco de dados
 require 'config.php';
+require 'protect.php';
 
 try {
     // Preparar e executar a consulta

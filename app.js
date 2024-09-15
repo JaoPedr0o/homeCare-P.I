@@ -45,7 +45,9 @@ selectCat.addEventListener('change', () => {
     valor = selectCat.value
     if (valor == 2) {
        let coren = document.getElementById('corenLabel')
-       coren.style.display = "block"
+       coren.style.display = "flex"
+       let corenInput = document.getElementById('coren')
+       corenInput.style.display = "flex"
     }
     else{
        let coren = document.getElementById('corenLabel')

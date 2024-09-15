@@ -64,16 +64,17 @@
               </label>
 
               <label class="label-input p-1" for="email">
-                <i class="fa-solid fa-lock icon-modify"></i>
+                <i class="fa-solid fa-envelope icon-modify"></i>
                 <input type="text" placeholder="Email" name="email" id="email" required />
               </label>
 
               <label style="display: none;" class="label-input p-1" for="coren" id="corenLabel">
+                <i class="fa-solid fa-user-nurse icon-modify"></i>
                 <input placeholder="Nº de Incrição Coren" type="text" name="coren" id="coren" />
               </label>
 
               <label class="label-input p-1" for="senha">
-                <i class="fa-solid fa-envelope icon-modify"></i>
+                <i class="fa-solid fa-lock icon-modify"></i>
                 <input type="password" placeholder="Senha" name="senha" id="senha" required />
               </label>
 
