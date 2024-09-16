@@ -7,7 +7,7 @@ require 'config.php';
 $pdo = new PDO('mysql:host=localhost;dbname=seubanco', 'usuario', 'senha');
 
 // Consultar todos os funcionários
-$stmt = $pdo->query("SELECT * FROM funcionarios");
+$stmt = $pdo->query("SELECT * FROM profissionais");
 $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Exibir os dados em uma tabela HTML

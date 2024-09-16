@@ -106,10 +106,12 @@
                     <h2>Resumo Profissional</h2>
                     <p>Estágio de dois anos no Hospital Nossa Senhora de Fátima, onde desenvolvi habilidades em administração de medicamentos, monitoramento de sinais específicos e assistência em procedimentos médicos. Experiência em diferentes áreas como emergência e UTI, além de competências em comunicação com pacientes.</p>
                 </div>
-            </section>
+            </section> 
+            <div class="d-flex justify-content-center">
+                <a href="editPerfil.php"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
+            </div>
         </div>
     </main>
-
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 

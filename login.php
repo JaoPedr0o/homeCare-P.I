@@ -78,10 +78,6 @@
                 <input type="password" placeholder="Senha" name="senha" id="senha" required />
               </label>
 
-              <select class="form-select label-input p-2 w-0" id="estados-select" aria-label="Default select  example" name="estado">
-                <option value="nda">UF</option>
-              </select>
-
               <fieldset class="d-flex align-items-center m-3">
                 <input class="form-radio" type="radio" name="sexo" id="sexo_masculino" value="Masculino" required/>Masculino
                 <input class="form-radio" type="radio" name="sexo" id="sexo_feminino" value="Feminino" required/>Feminino

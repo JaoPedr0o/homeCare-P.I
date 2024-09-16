@@ -13,10 +13,10 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        $sql = "
-            SELECT 'pacientes' AS tipo_usuario, nome, email, senha FROM pacientes WHERE email = :email
-            UNION 
-            SELECT 'profissionais' AS tipo_usuario, nome, email, senha FROM profissionais WHERE email = :email";
+        $sql = "SELECT 'pacientes' AS tipo_usuario, id, nome, email, senha FROM pacientes WHERE email = :email
+        UNION 
+        SELECT 'profissionais' AS tipo_usuario, id, nome, email, senha FROM profissionais WHERE email = :email";
+    
 
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':email', $email);

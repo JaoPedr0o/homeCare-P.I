@@ -44,6 +44,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="editarPerfilProfissional.php">
+                        <i class="fa-solid fa-pencil"></i>
+                        <span class="sidebar-text">EDITAR</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="login.php">
                         <i class="fa-solid fa-gear settings"></i>
                     </a>

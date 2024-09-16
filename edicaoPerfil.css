@@ -1,0 +1,85 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color) !important; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.logo-perfil {display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 100%; 
+    height: 5rem;
+}
+.logo-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem; 
+    height: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.row-form{
+    height:22rem !important;
+}
+.row-form2{
+    height: 10rem;
+}
+.div-radio{
+    margin-bottom: 50px;
+}
+.col{
+    align-items: center !important;
+}
+.form-control{
+    width: 70% !important;
+    height: 3rem;
+}
+p{
+    font-size: 1.5rem;
+    
+}
+.title{
+    padding-top: 1%;
+    border-bottom: solid 1px var(--secondary-blue);
+    font-size: 1.8rem;
+}
+.form-select{
+    width: 100% !important;
+    display: flex !important;
+    align-self: center !important;
+    height: 3rem;
+    border-radius: 10px;
+    
+}
+option{
+    font-size: 1.2rem;
+}
+textarea{
+    font-size: 1.5rem;
+}
+.label{
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+}
+.field{
+    font-size: 1.5rem;
+    margin-bottom: 50%;
+}
+.form-radio{
+    margin: 0 0 0 20px;
+}
+.btn_edit{
+    background-color: rgb(47, 154, 255);
+    color: var(--white);
+    box-shadow: var(--shadow-color);
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}

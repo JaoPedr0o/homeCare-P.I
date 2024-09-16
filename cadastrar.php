@@ -53,11 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
     $data_nascimento = $_POST['data_nascimento'];
-    $sexo = $_POST['sexo']; 
-    $sexo = $_POST['sexo']; 
+    $sexo = $_POST['sexo'];  
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT); // Criptografia da senha
-    $estado = $_POST['estado'];
 
     if (!validarCpf($cpf)) {
         echo "CPF inválido.";
@@ -72,8 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Inserir na tabela 'profissionais'
-        $sql = "INSERT INTO profissionais (nome, cpf, data_nascimento, sexo, email, senha, estado, coren) 
-                VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha, :estado, :coren)";
+        $sql = "INSERT INTO profissionais (nome, cpf, data_nascimento, sexo, email, senha, coren) 
+                VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha, :coren)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':nome' => $nome,
@@ -82,13 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':sexo' => $sexo,
             ':email' => $email,
             ':senha' => $senha,
-            ':estado' => $estado,
             ':coren' => $coren
         ]);
     } else {
         // Inserir na tabela 'pacientes'
-        $sql = "INSERT INTO pacientes (nome, cpf, data_nascimento, sexo, email, senha, estado) 
-                VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha, :estado)";
+        $sql = "INSERT INTO pacientes (nome, cpf, data_nascimento, sexo, email, senha) 
+                VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':nome' => $nome,
@@ -96,8 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':data_nascimento' => $data_nascimento,
             ':sexo' => $sexo,
             ':email' => $email,
-            ':senha' => $senha,
-            ':estado' => $estado
+            ':senha' => $senha
         ]);
     }
 
