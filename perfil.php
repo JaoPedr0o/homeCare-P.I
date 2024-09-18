@@ -46,6 +46,9 @@
                         <h1>Rasputia Nogueira</h1>
                         <h3>Cuidadora</h3>
                         <p>Rasputia Nogueira, nascida em 1988 em Belo Horizonte, é enfermeira formada pela Universidade Federal de Minas Gerais. Desde 2010, tem se dedicado ao atendimento de pacientes em diversas áreas de saúde, destacando-se por sua empatia e profissionalismo. Em 2015, recebeu o prêmio de "Enfermeira do Ano" pelo Hospital das Clínicas de Belo Horizonte.</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="editarPerfilProfissional.php"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
+                        </div>
                     </section>
 
                     <aside class="info">
@@ -107,9 +110,7 @@
                     <p>Estágio de dois anos no Hospital Nossa Senhora de Fátima, onde desenvolvi habilidades em administração de medicamentos, monitoramento de sinais específicos e assistência em procedimentos médicos. Experiência em diferentes áreas como emergência e UTI, além de competências em comunicação com pacientes.</p>
                 </div>
             </section> 
-            <div class="d-flex justify-content-center">
-                <a href="editPerfil.php"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
-            </div>
+            
         </div>
     </main>
     <script src="app.js"></script>

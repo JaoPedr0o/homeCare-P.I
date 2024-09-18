@@ -33,7 +33,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['tipo_usuario'] = $usuario['tipo_usuario'];
-            header("Location: telainicial.php");
+            header("Location: telaInicial.php");
             exit;
         } else {
             $erro = "[ERRO!] Senha ou E-mail incorretos!";
