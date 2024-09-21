@@ -18,6 +18,7 @@ body {
 .header {
     width: 100%;
     box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+    background-color: var(--white);
 }
 
 .header-imgs {
@@ -27,6 +28,7 @@ body {
     height: 20rem;
     display: flex;
     justify-content: space-between;
+    background-color: var(--secondary-blue) !important;
 }
 
 .header-imgs #perfil-img {
@@ -139,8 +141,7 @@ body {
 .skills-and-resume {
     display: flex;
     justify-content: space-between;
-    gap: 3rem; 
-    margin-top: 2rem;
+    gap: 1rem; 
     width: 100%; 
 }
 
@@ -151,9 +152,10 @@ body {
     padding: 1rem 4rem;
     border-radius: 0; /* Remove o arredondamento */
     box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
-    width: 60%; 
+    width: 50%; 
     border-top: 2rem solid var(--primary-blue); 
     height: 30rem;
+    margin: 0 2rem 2rem 2rem;
 }
 
 .skills h2,

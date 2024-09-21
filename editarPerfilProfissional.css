@@ -1,0 +1,213 @@
+
+/* Estilos Globais */
+*{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    background-color: var(--background-color);
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0rem !important;
+    
+}
+
+.container {
+    background: linear-gradient(290deg, var(--white) 70%, var(--background-color) 130%) !important;
+    padding: 0rem 0rem 2rem 0rem !important;
+    box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+    display: flex;
+    max-width: 80vw !important; 
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+    height: 99vh;
+}
+
+#data-form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.container form {
+    padding: 2rem;
+}
+
+/* Estilo do Título */
+.page-title {
+    display: flex;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    color: var(--white);
+    background: linear-gradient(290deg, var(--primary-blue) 70%, var(--white) 200%) !important;
+    height: 6rem;
+    text-align: left;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 1.5rem;
+}
+
+.page-title i {
+    font-size: small;
+}
+
+.user-description {
+    margin-bottom: 1.5rem;
+    width: 50%;
+    height: 16rem;
+}
+
+.form-description {
+    display: flex;
+    width: 100%;
+    justify-content: space-between !important;
+    gap: 2rem;
+}
+
+.select {
+    margin-bottom: 1.5rem;
+    flex: 1;
+    height: 5rem;
+    margin: 1rem 0rem;
+}
+
+.form-control, .form-select {
+    width: 100%;
+    height: 5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.6rem !important;
+    background-color: #eFeFeF !important;
+}
+
+.form-control, .form-select:focus {
+    outline: none !important;
+    border: none !important; /* Remove a borda */
+    box-shadow: none !important; /* Remove a sombra (que inclui a borda azul claro) */
+    background-color: #eFeFeF !important;
+}
+
+textarea.form-control {
+    resize: none;
+    padding: 2rem;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #eFeFeF;
+    outline: none !important;
+    font-size: 1.6rem;
+}
+
+textarea.form-control:focus {
+    outline: none !important;
+    border: none !important; /* Remove a borda */
+    box-shadow: none !important; /* Remove a sombra (que inclui a borda azul claro) */
+    background-color: #eFeFeF !important;
+}
+
+.label {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.pro-data {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+#bairro {
+    width: 100% !important;
+    font-size: 1.8rem;
+    background-color: #eFeFeF;
+}
+
+#bairro:focus{
+    width: 100% !important;
+    font-size: 1.8rem;
+    background-color: #eFeFeF;
+    outline: none !important;
+    border: none !important; /* Remove a borda */
+    box-shadow: none !important; /* Remove a sombra (que inclui a borda azul claro) */
+}
+
+.div-radio {
+    
+    margin: 0rem;
+    height: 5rem !important;
+}
+
+.form-radio {
+    width: 2rem;
+    height: 2rem;
+}
+
+.field {
+    margin: 0rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.blueButton{
+    bottom: 0rem;
+    width: 30rem;
+    left: 0rem;
+    background-color: var(--primary-blue);
+    transition: all 0.2s;
+    color: var(--white);
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    border: 0.2rem solid var(--primary-blue);
+    cursor: pointer;
+    text-decoration: none !important;
+    font-size: var(--font-size-s2);
+    font-weight: bold;
+}
+
+.blueButton:hover{
+    background-color: var(--white);
+    color: var(--primary-blue);
+    width: 30rem;
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    border: 0.2rem solid var(--primary-blue);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--font-size-s2);
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 60vw;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 90vw;
+    }
+}
