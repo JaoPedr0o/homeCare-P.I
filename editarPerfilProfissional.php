@@ -15,7 +15,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.global.css">
-    <link rel="stylesheet" type="text/css" href="editarPerfilProfissional2.css">
+    <link rel="stylesheet" type="text/css" href="editarPerfilProfissional.css">
 </head>
 
 <body>
@@ -27,8 +27,7 @@
         </div>
     </div>
     <div class="main-content">
-        
-
+    
         <div class="container">
             <!-- Título da Página -->
             <h1 class="page-title">
@@ -37,13 +36,18 @@
             </h1>
             <div class="editPerfilImg">
                 <form id="img-form" action="uploadImage.php" method="POST" enctype="multipart/form-data">
-                    <label for="upload-img" id="uploadImg-label">
-                        <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage ?? 'assets/defaultAvatar.png'); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
-                    </label>
-                    <input id="upload-img" type="file" name="profileImage" accept="image/*" required>
-                    <!-- Campo oculto ou sessão para indicar o tipo de usuário -->
-                    <input type="hidden" name="userType" value="paciente"> <!-- ou 'profissional' -->
-                    <button class="blueButton" type="submit" name="submit">Enviar</button>
+                    <div>
+                        <label for="upload-img" id="uploadImg-label">
+                            <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage ?? 'assets/defaultAvatar.png'); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
+                        </label>
+                        <input id="upload-img" type="file" name="profileImage" accept="image/*" required>
+                        <!-- Campo oculto ou sessão para indicar o tipo de usuário -->
+                        <input type="hidden" name="userType" value="paciente"> <!-- ou 'profissional' -->
+                    </div>
+                    <div>
+                        <h2 id="submitImgTitle"><strong>ATUALIZAR IMAGEM</strong></h2>
+                        <button class="blueButton" id="submit-btn" style="display: none;" type="submit" name="submit">ATUALIZAR</button>
+                    </div>
                 </form>
             </div>
             
@@ -116,38 +120,30 @@
                 <div class="row row-form2 div-radio">
                     <div class="col">
                         <label class="label" for="comunicacao">Habilidade de Comunicação</label>
-                        <fieldset class="field">
-                            <input class="form-radio" type="radio" name="comunicacao_exp" id="valor_alto" value="alto" required />ALTO
-                            <input class="form-radio" type="radio" name="comunicacao_exp" id="valor_medio" value="medio" required />MÉDIO
-                            <input class="form-radio" type="radio" name="comunicacao_exp" id="valor_baixo" value="baixo" required />BAIXO
-                        </fieldset>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                        </div>
                     </div>
                     <div class="col">
                         <label class="label" for="comunicacao">Cuidados de Enfermagem</label>
-                        <fieldset class="field">
-                            <input class="form-radio" type="radio" name="enfermagem_exp" id="valor_alto" value="alto" required />ALTO
-                            <input class="form-radio" type="radio" name="enfermagem_exp" id="valor_medio" value="medio" required />MÉDIO
-                            <input class="form-radio" type="radio" name="enfermagem_exp" id="valor_baixo" value="baixo" required />BAIXO
-                        </fieldset>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                        </div>
                     </div>
                 </div>
 
                 <div class="row row-form2 div-radio">
                     <div class="col">
                         <label class="label" for="equipamentos">Uso de Equipamentos Médicos</label>
-                        <fieldset class="field">
-                            <input class="form-radio" type="radio" name="equipamentos_exp" id="valor_alto" value="alto" required />ALTO
-                            <input class="form-radio" type="radio" name="equipamentos_exp" id="valor_medio" value="medio" required />MÉDIO
-                            <input class="form-radio" type="radio" name="equipamentos_exp" id="valor_baixo" value="baixo" required />BAIXO
-                        </fieldset>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                        </div>
                     </div>
                     <div class="col">
                         <label class="label" for="educacao">Educação ao Paciente</label>
-                        <fieldset class="field">
-                            <input class="form-radio" type="radio" name="educacao_exp" id="valor_alto" value="alto" required />ALTO
-                            <input class="form-radio" type="radio" name="educacao_exp" id="valor_medio" value="medio" required />MÉDIO
-                            <input class="form-radio" type="radio" name="educacao_exp" id="valor_baixo" value="baixo" required />BAIXO
-                        </fieldset>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                        </div>
                     </div>
                 </div>
             </form>
@@ -162,6 +158,21 @@
     <script src="perfil.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script>
+        document.getElementById('upload-img').addEventListener('change', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            let submitTitle =document.getElementById('submitImgTitle')
+            
+            // Se um arquivo foi selecionado, exibe o botão de enviar
+            if (this.files && this.files.length > 0) {
+                submitBtn.style.display = 'block';
+                submitTitle.innerHTML = " "
+            } else {
+                submitBtn.style.display = 'none';
+                submitTitle.innerHTML = "<strong>Selecione a Imagem</strong>"
+            }
+        });
     </script>
 </body>
 

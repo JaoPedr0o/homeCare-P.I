@@ -45,8 +45,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">
-                        <i class="fa-solid fa-gear settings"></i>
-                        <span class="sidebar-text">CONFIGURAÇÕES</span>
+                        <i class="fa-solid fa-power-off settings"></i>
+                        <span class="sidebar-text">SAIR</span>
                     </a>
                 </li>
             </ul>

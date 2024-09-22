@@ -51,22 +51,3 @@ async function buscarCidades(siglaEstado) {
         console.error("Erro ao buscar cidades:", error);
     }
 }
-
-
-// Função que detecta quando o usuário seleciona uma imagem
-document.getElementById('upload-img').addEventListener('change', function() {
-    var file = this.files[0];
-    var reader = new FileReader();
-
-    if (file) {
-        // Atualiza a imagem de pré-visualização
-        reader.onload = function(e) {
-            document.getElementById('perfil-img').src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-
-        // Exibe uma mensagem de confirmação de seleção
-        alert("Imagem selecionada com sucesso!");
-    }
-});
-
