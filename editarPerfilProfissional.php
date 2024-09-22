@@ -1,3 +1,9 @@
+<?php 
+    require 'protect.php';
+    require 'getProfileImage.php';
+    $profileImage = getProfileImage();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,13 +15,15 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.global.css">
-    <link rel="stylesheet" type="text/css" href="editarPerfilProfissional.css">
+    <link rel="stylesheet" type="text/css" href="editarPerfilProfissional2.css">
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
-            <?php require 'sidebar.php'; ?>
+            <?php 
+                require 'sidebar.php'; 
+            ?>
         </div>
     </div>
     <div class="main-content">
@@ -27,7 +35,19 @@
                 <i class="fa-solid fa-pen"></i>
                 Meus Dados
             </h1>
-            <form action="info.php" id="data-form" method="POST">
+            <div class="editPerfilImg">
+                <form id="img-form" action="uploadImage.php" method="POST" enctype="multipart/form-data">
+                    <label for="upload-img" id="uploadImg-label">
+                        <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage ?? 'assets/defaultAvatar.png'); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
+                    </label>
+                    <input id="upload-img" type="file" name="profileImage" accept="image/*" required>
+                    <!-- Campo oculto ou sessão para indicar o tipo de usuário -->
+                    <input type="hidden" name="userType" value="paciente"> <!-- ou 'profissional' -->
+                    <button class="blueButton" type="submit" name="submit">Enviar</button>
+                </form>
+            </div>
+            
+                <form action="info.php" id="data-form" method="POST">
                 <div class="form-description">
                     <!-- Descrição Pessoal -->
                     <div class="user-description">
@@ -134,7 +154,7 @@
 
             <!-- Botão Salvar -->
             <div class="d-flex justify-content-center">
-                <button type="submit" form="data-form" class="blueButton">Salvar</button>
+                <button type="submit" form="data-form img-form" class="blueButton">Salvar</button>
             </div>
 
         </div>

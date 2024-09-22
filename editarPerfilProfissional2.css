@@ -72,7 +72,7 @@ body {
 .user-description {
     margin-bottom: 1.5rem;
     width: 50%;
-    height: 16rem;
+    height: 14rem;
 }
 
 .form-description {
@@ -85,7 +85,7 @@ body {
 .select {
     margin-bottom: 1.5rem;
     flex: 1;
-    height: 5rem;
+    height: 4rem;
     margin: 1rem 0rem;
 }
 
@@ -171,7 +171,6 @@ textarea.form-control:focus {
 
 .blueButton{
     bottom: 0rem;
-    width: 30rem;
     left: 0rem;
     background-color: var(--primary-blue);
     transition: all 0.2s;
@@ -189,7 +188,6 @@ textarea.form-control:focus {
 .blueButton:hover{
     background-color: var(--white);
     color: var(--primary-blue);
-    width: 30rem;
     box-shadow: var(--shadow-color);
     padding: 1rem 1rem;
     font-size: 1.2rem;
@@ -199,6 +197,18 @@ textarea.form-control:focus {
     font-size: var(--font-size-s2);
     font-weight: bold;
 }
+
+input[type="file"] {
+    display: none !important;
+}
+
+#perfil-img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 
 @media (min-width: 768px) {
     .container {

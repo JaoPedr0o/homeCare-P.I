@@ -1,5 +1,7 @@
 <?php 
-    require 'protect.php'
+    require 'protect.php';
+    require 'getProfileImage.php';
+    $profileImage = getProfileImage();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
           rel="stylesheet">
     
-    <link rel="stylesheet" href="perfilPaciente2.css">
+    <link rel="stylesheet" href="perfilPaciente.css">
     <link rel="stylesheet" href="style.global.css">
 </head>
 
@@ -37,7 +39,11 @@
             <header class="header">
                 <div class="header-imgs">
                     <!--<img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">-->
-                    <img id="perfil-img" src="./assets/pacienteImg.png" alt="Foto de Rasputia Nogueira">
+                    <?php if ($profileImage): ?>
+                        <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
+                    <?php else: ?>
+                        <img id="perfil-img" src="assets/defaultAvatar.png" alt="Imagem de Perfil" style="max-width: 200px;">
+                    <?php endif; ?>
                 </div>
 
                 <div class="header-details">
