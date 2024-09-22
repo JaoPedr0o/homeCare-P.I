@@ -4,7 +4,9 @@ require 'config.php';
 function getProfileImage() {
     global $pdo;
 
-    session_start(); // Iniciar a sessão aqui
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
 
     if (!isset($_SESSION['id']) || !isset($_SESSION['tipo_usuario'])) {
         return null; // Retornar null se não estiver autenticado
