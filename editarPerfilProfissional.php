@@ -14,6 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.global.css">
     <link rel="stylesheet" type="text/css" href="editarPerfilProfissional.css">
 </head>
@@ -42,7 +43,7 @@
                         </label>
                         <input id="upload-img" type="file" name="profileImage" accept="image/*" required>
                         <!-- Campo oculto ou sessão para indicar o tipo de usuário -->
-                        <input type="hidden" name="userType" value="paciente"> <!-- ou 'profissional' -->
+                        <input type="hidden" name="userType" value="profissional"> <!-- ou 'paciente' -->
                     </div>
                     <div>
                         <h2 id="submitImgTitle"><strong>ATUALIZAR IMAGEM</strong></h2>

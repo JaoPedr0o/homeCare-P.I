@@ -1,5 +1,7 @@
 <?php 
-    require 'protect.php'
+    require 'protect.php';
+    require 'getProfileImage.php';
+    $profileImage = getProfileImage();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,6 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    
+    <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
           rel="stylesheet" 
@@ -37,7 +41,11 @@
             <header class="header">
                 <div class="header-imgs">
                     <img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">
-                    <img id="perfil-img" src="./assets/image.png" alt="Foto de Rasputia Nogueira">
+                    <?php if ($profileImage): ?>
+                        <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
+                    <?php else: ?>
+                        <img id="perfil-img" src="assets/defaultAvatar.png" alt="Imagem de Perfil" style="max-width: 200px;">
+                    <?php endif; ?>
                 </div>
 
                 <div class="header-details">

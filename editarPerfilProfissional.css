@@ -44,6 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    margin-bottom: 3rem;
 }
 
 .container form {
