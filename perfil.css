@@ -194,14 +194,19 @@ body {
 
 .btn_edit{
     position: absolute;
-    bottom: 0rem;
-    left: 0rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.6rem;
+    align-items: center;
+    gap: 0.3rem;
+    top: 0rem;
+    right: 0rem;
     background-color: var(--primary-blue);
     transition: all 0.2s;
     color: var(--white);
     box-shadow: var(--shadow-color);
-    padding: 1rem 1rem;
-    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
     border: 0.2rem solid var(--primary-blue);
     cursor: pointer;
     text-decoration: none !important;
@@ -213,8 +218,9 @@ body {
     background-color: var(--white);
     color: var(--primary-blue);
     box-shadow: var(--shadow-color);
-    padding: 1rem 1rem;
-    font-size: 1.2rem;
+    border-radius: 0.6rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
     border: 0.2rem solid var(--primary-blue);
     cursor: pointer;
     text-decoration: none;
@@ -367,7 +373,35 @@ body {
 
     .skills-and-resume {
         display: flex;
-        flex-direction: column;
+        flex-directiobtn_edit{
+            position: absolute;
+            top: 0rem;
+            right: 0rem;
+            background-color: var(--primary-blue);
+            transition: all 0.2s;
+            color: var(--white);
+            box-shadow: var(--shadow-color);
+            padding: 1rem 1rem;
+            font-size: 1.2rem;
+            border: 0.2rem solid var(--primary-blue);
+            cursor: pointer;
+            text-decoration: none !important;
+            font-size: var(--font-size-s2);
+            font-weight: bold;
+        }
+        
+        .btn_edit:hover{
+            background-color: var(--white);
+            color: var(--primary-blue);
+            box-shadow: var(--shadow-color);
+            padding: 1rem 1rem;
+            font-size: 1.2rem;
+            border: 0.2rem solid var(--primary-blue);
+            cursor: pointer;
+            text-decoration: none;
+            font-size: var(--font-size-s2);
+            font-weight: bold;
+        }n: column;
         justify-content: space-between;
         gap: 3rem; 
         margin-top: 2rem;

@@ -55,7 +55,12 @@
                         <h3>Paciente</h3>
                         <p>Seu Antônio, 80 anos, é um ex-carpinteiro aposentado que adora jardinagem e contar histórias. Apaixonado por música e novelas, ele aprecia momentos com os netos. Com a idade, precisa de cuidados diários, como ajuda para se vestir e lembrar de tomar medicamentos. Seu maior sonho é continuar compartilhando suas memórias e aprender a usar um tablet para se conectar ainda mais com a família.</p>
                         <div class="d-flex justify-content-center">
-                            <a href="editarPerfilProfissional.php" style="text-decoration: none;"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
+                        <a href="editarPerfilProfissional.php" style="text-decoration: none;">
+                                <button class="d-flex btn_edit">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    Dados
+                                </button>
+                            </a>
                         </div>
                     </section>
 
