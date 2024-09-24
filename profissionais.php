@@ -39,7 +39,7 @@ try {
             <div class=" col-md-9 col-lg-10 main-content">
               
 
-                <!-- Container dos cards -->
+                <!-- Container dos cardss -->
                 <div class="employee-container">
                     <?php if ($profissionais): ?>
                         <?php foreach ($profissionais as $profissional): ?>
