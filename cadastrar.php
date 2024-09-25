@@ -1,5 +1,4 @@
 <?php
-// cadastrar.php
 require 'config.php';
 
 function validarCpf($cpf) {
@@ -40,12 +39,8 @@ function validarCoren($coren) {
     // Remove caracteres não numéricos
     $coren = preg_replace('/[^0-9]/', '', $coren);
 
-    // Verifica se o CORÉN tem 7 ou 8 dígitos e um estado (UF) de 2 letras
-    if (strlen($coren) > 10) {
-        return false;
-    }
-    return true; 
-    return true; 
+    // Verifica se o CORÉN tem no máximo 10 dígitos
+    return strlen($coren) <= 10;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -62,42 +57,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    if ($tipo == '2') {
-        $coren = $_POST['coren'];
-        if (!validarCoren($coren)) {
-            echo "CORÉN inválido.";
-            exit;
+    try {
+        if ($tipo == '2') {
+            $coren = $_POST['coren'];
+            if (!validarCoren($coren)) {
+                echo "CORÉN inválido.";
+                exit;
+            }
+
+            // Inserir na tabela 'profissionais'
+            $sql = "INSERT INTO profissionais (nome, cpf, data_nascimento, sexo, email, senha, coren) 
+                    VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha, :coren)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':nome' => $nome,
+                ':cpf' => $cpf,
+                ':data_nascimento' => $data_nascimento,
+                ':sexo' => $sexo,
+                ':email' => $email,
+                ':senha' => $senha,
+                ':coren' => $coren
+            ]);
+
+            // Iniciar a sessão se ainda não estiver iniciada
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['id'] = $pdo->lastInsertId();
+
+        } else {
+            // Inserir na tabela 'pacientes'
+            $sql = "INSERT INTO pacientes (nome, cpf, data_nascimento, sexo, email, senha) 
+                    VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':nome' => $nome,
+                ':cpf' => $cpf,
+                ':data_nascimento' => $data_nascimento,
+                ':sexo' => $sexo,
+                ':email' => $email,
+                ':senha' => $senha
+            ]);
         }
 
-        // Inserir na tabela 'profissionais'
-        $sql = "INSERT INTO profissionais (nome, cpf, data_nascimento, sexo, email, senha, coren) 
-                VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha, :coren)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':nome' => $nome,
-            ':cpf' => $cpf,
-            ':data_nascimento' => $data_nascimento,
-            ':sexo' => $sexo,
-            ':email' => $email,
-            ':senha' => $senha,
-            ':coren' => $coren
-        ]);
-    } else {
-        // Inserir na tabela 'pacientes'
-        $sql = "INSERT INTO pacientes (nome, cpf, data_nascimento, sexo, email, senha) 
-                VALUES (:nome, :cpf, :data_nascimento, :sexo, :email, :senha)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':nome' => $nome,
-            ':cpf' => $cpf,
-            ':data_nascimento' => $data_nascimento,
-            ':sexo' => $sexo,
-            ':email' => $email,
-            ':senha' => $senha
-        ]);
+        echo "Cadastro realizado com sucesso!";
+    } catch (PDOException $e) {
+        echo "Erro ao realizar o cadastro: " . $e->getMessage();
     }
-
-    echo "Cadastro realizado com sucesso!";
 } else {
     echo "Método de requisição inválido.";
 }

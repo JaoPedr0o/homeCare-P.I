@@ -52,7 +52,7 @@
                 </form>
             </div>
             
-                <form action="info.php" id="data-form" method="POST">
+                <form action="guardarinfo.php" id="data-form" method="POST">
                 <div class="form-description">
                     <!-- Descrição Pessoal -->
                     <div class="user-description">
