@@ -43,6 +43,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
+
 /* Responsividade */
 @media (max-width: 768px) {
     .card {
