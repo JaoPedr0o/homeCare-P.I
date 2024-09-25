@@ -42,7 +42,7 @@ async function buscarCidades(siglaEstado) {
         // Adiciona cada cidade como uma opção no select
         cidades.forEach(cidade => {
             const option = document.createElement("option");
-            option.value = cidade.id;
+            option.value = cidade.nome;
             option.name = cidade.nome;
             option.textContent = cidade.nome;
             selectElement.appendChild(option);

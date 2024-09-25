@@ -16,7 +16,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('#cpf').mask("000.000.000-00")
-        $('#coren').mask("000.000")
+        $('#coren').mask("00000")
       })
     </script>
   </head>
