@@ -51,3 +51,19 @@ async function buscarCidades(siglaEstado) {
         console.error("Erro ao buscar cidades:", error);
     }
 }
+
+
+
+document.getElementById('upload-img').addEventListener('change', function() {
+    const submitBtn = document.getElementById('submit-btn');
+    let submitTitle =document.getElementById('submitImgTitle')
+    
+    // Se um arquivo foi selecionado, exibe o botão de enviar
+    if (this.files && this.files.length > 0) {
+        submitBtn.style.display = 'block';
+        submitTitle.innerHTML = " "
+    } else {
+        submitBtn.style.display = 'none';
+        submitTitle.innerHTML = "<strong>Selecione a Imagem</strong>"
+    }
+});

@@ -53,7 +53,7 @@ try {
         <?php endif; ?>
         <div class="card-text-container">
         <h2 class="card-title"><?php echo htmlspecialchars($profissional['nome']); ?></h2>
-        <p class="card-text"><strong>CPF:</strong> <?php echo htmlspecialchars($profissional['cpf']); ?></p>
+        <p class="card-text"><strong>CPF:</strong> <?php echo htmlspecialchars($profissional['CPF']); ?></p>
         <p class="card-text"><strong>Data de Nascimento:</strong> <?php echo htmlspecialchars($profissional['data_nascimento']); ?></p>
         <p class="card-text"><strong>Sexo:</strong> <?php echo htmlspecialchars($profissional['sexo']); ?></p>
         <p class="card-text"><strong>Email:</strong> <?php echo htmlspecialchars($profissional['email']); ?></p>

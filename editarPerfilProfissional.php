@@ -1,7 +1,7 @@
-<?php 
-    require 'protect.php';
-    require 'getProfileImage.php';
-    $profileImage = getProfileImage();
+<?php
+require 'protect.php';
+require 'getProfileImage.php';
+$profileImage = getProfileImage();
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +22,13 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <?php 
-                require 'sidebar.php'; 
+            <?php
+            require 'sidebar.php';
             ?>
         </div>
     </div>
     <div class="main-content">
-    
+
         <div class="container">
             <!-- Título da Página -->
             <h1 class="page-title">
@@ -51,8 +51,8 @@
                     </div>
                 </form>
             </div>
-            
-                <form action="guardarinfo.php" id="data-form" method="POST">
+
+            <form action="guardarinfo.php" id="data-form" method="POST">
                 <div class="form-description">
                     <!-- Descrição Pessoal -->
                     <div class="user-description">
@@ -71,7 +71,7 @@
                     <!-- Estado -->
                     <div class="select">
                         <label for="estado" class="label">Estado</label>
-                        <select class="form-select" id="estado" name="estado" onchange="buscarCidades(this.value)">
+                        <select class="form-select" id="estados-select" name="estado" onchange="buscarCidades(this.value)">
                             <option value="nda">Selecione o Estado:</option>
                         </select>
                     </div>
@@ -79,7 +79,7 @@
                     <!-- Cidade -->
                     <div class="select">
                         <label for="cidade" class="label">Cidade</label>
-                        <select class="form-select" id="cidade" name="cidade">
+                        <select class="form-select" id="cidades-select" name="cidade">
                             <option value="nda">Selecione a Cidade:</option>
                         </select>
                     </div>
@@ -147,34 +147,14 @@
                         </div>
                     </div>
                 </div>
+                <!-- Botão Salvar -->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="blueButton">Salvar</button>
+                </div>
             </form>
-
-            <!-- Botão Salvar -->
-            <div class="d-flex justify-content-center">
-                <button type="submit" form="data-form img-form" class="blueButton">Salvar</button>
-            </div>
-
         </div>
     </div>
     <script src="perfil.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script>
-        document.getElementById('upload-img').addEventListener('change', function() {
-            const submitBtn = document.getElementById('submit-btn');
-            let submitTitle =document.getElementById('submitImgTitle')
-            
-            // Se um arquivo foi selecionado, exibe o botão de enviar
-            if (this.files && this.files.length > 0) {
-                submitBtn.style.display = 'block';
-                submitTitle.innerHTML = " "
-            } else {
-                submitBtn.style.display = 'none';
-                submitTitle.innerHTML = "<strong>Selecione a Imagem</strong>"
-            }
-        });
-    </script>
 </body>
 
 </html>
