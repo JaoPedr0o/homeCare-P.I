@@ -23,8 +23,7 @@ body{
     position: absolute;
 }
 .content{
-    background-color: white;
-    border-radius: 15px;
+    background: linear-gradient(290deg, var(--white) 80%, var(--shadow-color) 130%) !important;
     width:960px;
     height: 70%;
     justify-content: space-between;
@@ -34,16 +33,14 @@ body{
 .content::before{
     content:"";
     position: absolute;
-    background-color: #3D7C89;
+    background: linear-gradient(290deg, var(--primary-blue) 70%, var(--white) 200%) !important;
     width: 40%;
     height: 100%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
     left: 0;
 }
 .title{
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 2.4rem;
+    font-weight: 900;
 }
 .title-primary{
     color: #fff;
@@ -52,9 +49,9 @@ body{
     color: #3D7C89;
 }
 .description{
-    font-size: 14px;
+    font-size: 1.6rem;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 40px;
 }
 .description-primary{
     color: #fff;
@@ -62,71 +59,94 @@ body{
 .description-second{
     color: #3D7C89;
 }
+
+i {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+}
+
 /*botão escrito "REGISTRAR "*/
 .btn-primary{
-    border-radius: 5rem;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 0.6rem;
-    padding: 3% 6%;
+    background-color: var(--primary-blue) !important;
+    transition: all 0.2s !important;
+    color: var(--white);
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    text-decoration: none !important;
+    font-size: var(--font-size-s2);
     font-weight: bold;
-    width: 50%;
-    align-self: center;
-    margin-top:0.2rem ;
-    background-color: #3D7C89;
-    border: 1px solid #3D7C89;
-    transition: background-color 0.5s ;
+    border: 1px solid var(--primary-blue);
 }
-.btn-primary:hover{
-    background-color:#fff ;
-    color: #3D7C89;
-    border: 1px solid #3D7C89;
 
+.btn-primary:hover{
+    background-color: var(--white) !important;
+    color: var(--primary-blue);
+    transition: all 0.2s !important;
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid var(--primary-blue);
+    font-size: var(--font-size-s2);
+    font-weight: bold;
 }
 /*botão escrito "LOGAR"*/
 .btn-second{
-    border-radius: 5rem;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 0.6rem;
-    padding: 1.5% 6%;
+    background-color: var(--primary-blue) !important;
+    transition: all 0.2s !important;
+    color: var(--white);
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    text-decoration: none !important;
+    font-size: var(--font-size-s2);
     font-weight: bold;
-    width: 50%;
-    align-self: center;
-    margin-top:1rem ;
-    background-color: #3D7C89;
-    border: 1px solid #3D7C89;
-    transition: background-color 0.5s ;
-    height:2rem;
+    border: 1px solid var(--primary-blue);
 }
 .btn-second:hover{
-    background-color: #fff;
-    border: 1px solid #3D7C89;
-    color: #3D7C89;
+    background-color: var(--white) !important;
+    color: var(--primary-blue);
+    transition: all 0.2s !important;
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid var(--primary-blue);
+    font-size: var(--font-size-s2);
+    font-weight: bold;
 }
 
 /*botÕES(os dois) do lado azul*/
 .btn-blue-side{
-    border-radius: 5rem;
-    text-transform: uppercase;
-    color: #ffff;
-    font-size: 0.6rem;
-    padding: 3% 6%;
+    width: 20rem;
+    transition: all 0.2s !important;
+    color: var(--white);
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    text-decoration: none !important;
+    font-size: var(--font-size-s2);
     font-weight: bold;
-    width: 50%;
-    align-self: center;
-    margin-top:1rem ;
-    background-color: transparent;
-    border: 1px solid #fff;
-    transition: background-color 0.5s ;
+    border: 1px solid var(--white);
 }
 .btn-blue-side:hover{
-    background-color:#fff ;
-    color: #3D7C89;
-    border: 1px solid #3D7C89;
+    background-color: var(--white) !important;
+    color: var(--primary-blue);
+    transition: all 0.2s !important;
+    box-shadow: var(--shadow-color);
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid var(--white);
+    font-size: var(--font-size-s2);
+    font-weight: bold;
 }
 
 
@@ -178,12 +198,21 @@ body{
     border-radius: 10px;
     outline: none;
     margin-left: 4px;
+    font-size: 1.5rem;
 }
 .form-radio{
     max-height: 0.9rem;
     max-width: 20%;
     padding: 5px;
+    
 }
+
+fieldset p {
+    margin: 0rem !important;
+    padding: 0rem !important;
+    font-size: 1.5rem;
+}
+
 input:-webkit-autofill{
     -webkit-box-shadow: 0 0 0 1000px #ecf0f1 inset !important;
     -webkit-text-fill-color: #000 !important;
@@ -231,7 +260,7 @@ input:-webkit-autofill{
 }
 .password{
     color: #3D7C89;
-    font-size: 14px;
+    font-size: 1.5rem;
     margin: 15px 0;
     text-align: center;
 }
@@ -260,8 +289,6 @@ input:-webkit-autofill{
     left:60%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     animation: slidein 0.5s;
 
     z-index: 12;
@@ -269,7 +296,6 @@ input:-webkit-autofill{
 
 .sign-up-js .content::before{
     animation: slideou 0.5s;
-
     z-index: 12;
 }
 
@@ -609,11 +635,11 @@ input:-webkit-autofill{
 }
 
 .bg-info {
-    background-color: #3D7C89 !important;
+    background-color: var(--primary-blue) !important;
 }
 
 .fs-6 {
-    font-size: 0.9em !important;
+    font-size: 1.4em !important;
 }
 
 .h-75 {
@@ -622,6 +648,7 @@ input:-webkit-autofill{
 
 .form-select {
     margin-left: 8px !important;
+    font-size: 1.8rem;
 }
 
 .w-0 {

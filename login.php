@@ -13,6 +13,7 @@
     <script src="js/jquery-3.7.1.js" type="text/javascript"></script>
     <script src="js/jquery.mask.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="login.css"/>
+    <link rel="stylesheet" href="style.global.css">
     <script type="text/javascript">
       $(document).ready(function(){
         $('#cpf').mask("000.000.000-00")
@@ -25,7 +26,7 @@
     <div class="container">
       <div class="content first-content h-75">
         <div class="first-column">
-          <h2 class="title-primary">Bem-Vindo!</h2>
+          <h2 class="title title-primary">Bem-Vindo!</h2>
           <p class="description description-primary">
             Para acesssar nossos serviços
           </p>
@@ -34,8 +35,8 @@
         </div>
         <!--First-Column-->
         <div class="second-column" id="containerCad">
-          <h2 class="title title-second text-decoration-underline">
-            Criar minha conta
+          <h2 class="title title-second">
+            CRIAR MINHA CONTA
           </h2>
           <p class="fw-light fs-6">Selecione a categoria de seu cadastro:</p>
           <form action="cadastrar.php" class="form mt-3 d-flex justify-content-center" id="formCad" method="post">
@@ -79,10 +80,10 @@
               </label>
 
               <fieldset class="d-flex align-items-center m-3">
-                <input class="form-radio" type="radio" name="sexo" id="sexo_masculino" value="Masculino" required/>Masculino
-                <input class="form-radio" type="radio" name="sexo" id="sexo_feminino" value="Feminino" required/>Feminino
+                <input class="form-radio" type="radio" name="sexo" id="sexo_masculino" value="Masculino" required/><p>Masculino</p>
+                <input class="form-radio" type="radio" name="sexo" id="sexo_feminino" value="Feminino" required/><p>Feminino</p>
               </fieldset>
-              <button class="btn btn-primary">Registrar</button>
+              <button class="btn btn-primary">REGISTRAR</button>
             </form>
           </div>
         </div>
@@ -101,10 +102,10 @@
         <!--First-Column-->
         <div class="second-column">
           <div class="d-flex justify-content-center">
-            <img src="loginIMG/logo.png" class="h-25 w-25" alt="" />
+            <img src="loginIMG/logo-transparente.png" class="h-25 w-25" alt="" />
           </div>
-          <h2 class="title title-second text-decoration-underline my-5">
-            Entrar na conta
+          <h2 class="title title-second my-5">
+            ENTRAR NA CONTA
           </h2>
 
           <form class="form" action="validarLogin.php" method="post">
@@ -117,7 +118,7 @@
               <input type="password" placeholder="Senha" name="senha"/>
             </label>
             <a class="password" href="#">Esqueceu sua senha?</a>
-            <button id="loginButton" class="btn btn-second">Logar</button>
+            <button id="loginButton" class="btn btn-second">LOGAR</button>
           </form>
           
         </div>
