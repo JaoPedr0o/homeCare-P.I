@@ -26,9 +26,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="perfil.php">
+                    <a class="nav-link" href="#">
                         <i class="fa-solid fa-user"></i>
                         <span class="sidebar-text">PERFIL</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="perfil.php">
+                        <i class="fa-solid fa-message"></i>
+                        <span class="sidebar-text">CHAT</span>
                     </a>
                 </li>
                 <li class="nav-item">

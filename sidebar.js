@@ -2,6 +2,7 @@ const sidebar = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
 const modal = document.getElementById("leave-modal")
 const logoutBtn = document.getElementById("confirm-button")
+const body = document.body
 
 function applyInitialLayout() {
     const screenWidth = window.innerWidth;
@@ -56,9 +57,9 @@ function handleModalLeave() {
         console.log("fechou")
     } else {
         modal.style.visibility = 'visible'
+        body.style.overflow = 'hidden'
         console.log("abriu")
     }
-    
 }
 
 function handleLogout() {

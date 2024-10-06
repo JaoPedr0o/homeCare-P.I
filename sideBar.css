@@ -107,6 +107,7 @@
 
 /* Modal de Logout*/
 #leave-modal {
+    position: absolute;
     visibility: hidden;
     display: flex;
     justify-content: center;
@@ -114,7 +115,7 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--shadow-color);
-    
+    z-index: 999;
 }
     
 #modal-content {
