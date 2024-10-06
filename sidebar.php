@@ -43,8 +43,8 @@
                         <span class="sidebar-text">MATERIAIS</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">
+                <li class="nav-item" onclick="handleModalLeave()">
+                    <a class="nav-link">
                         <i class="fa-solid fa-power-off settings"></i>
                         <span class="sidebar-text">SAIR</span>
                     </a>
@@ -53,6 +53,20 @@
         </div>
     </div>
 
+    <div id="leave-modal">
+        <div id="modal-content">
+            <h1>Sair da Conta</h1>
+            <p>Você tem certeza de que deseja sair? Ao sair, você não estará mais conectado à sua conta. Se você tiver alterações não salvas, elas serão perdidas.</p>
+            <section>
+                <div id="wrapper-button">
+                    <button onclick="handleModalLeave()" id="cancel-button" class="blue-button">Cancelar</button>
+                    <button onclick="handleLogout()" class="red-button" id="confirm-button">Sair</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="sidebar.js"></script>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

@@ -1,6 +1,7 @@
-
 const sidebar = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
+const modal = document.getElementById("leave-modal")
+const logoutBtn = document.getElementById("confirm-button")
 
 function applyInitialLayout() {
     const screenWidth = window.innerWidth;
@@ -49,4 +50,17 @@ window.addEventListener('resize', () => {
     handleSidebarHover();  // Reattach the hover listeners on resize
 });
 
+function handleModalLeave() {
+    if (modal.style.visibility === 'visible') {
+        modal.style.visibility = 'hidden'
+        console.log("fechou")
+    } else {
+        modal.style.visibility = 'visible'
+        console.log("abriu")
+    }
+    
+}
 
+function handleLogout() {
+    window.location.href = "login.php"
+}

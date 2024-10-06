@@ -17,7 +17,7 @@
     overflow-x: hidden;
     background: linear-gradient(290deg, var(--primary-blue) 70%, var(--white) 200%) !important;
     border-right: 0.1rem solid var(--white);
-    transition: width 0.4s ease; /* Suavidade na transição de largura */
+    transition: width 0.3s ease; /* Suavidade na transição de largura */
 }
 
 .sidebar:hover {
@@ -67,7 +67,6 @@
     align-items: center;
     color: var(--white);
     text-decoration: none;
-    transition: all 0.5s;
     width: 100%;
     padding: 1.5rem 1.5rem;
 }
@@ -105,6 +104,51 @@
 .sidebar:hover + .main-content {
     margin-left: 20rem;
 }
+
+/* Modal de Logout*/
+#leave-modal {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--shadow-color);
+    
+}
+    
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 2rem solid var(--primary-blue);
+    background-color: var(--white);
+    padding: 2rem;
+    width: 50rem;
+    height: 30rem;
+}
+
+#modal-content p {
+    font-size: var(--font-size-s3);
+    text-align: justify;
+    background-color: #ffdadac9;
+    border: 0.1rem solid #fc5454c9;
+    border-right: 0.5rem solid #fc5454c9;
+    padding: 1rem;
+    font-weight: bold;
+    color: var(--background-dark-color);
+}
+
+#wrapper-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#wrapper-button button {
+    width: 49%;
+}
+
 
 @media (min-width: 0) and (max-width: 1024px) {
     .sidebar {
