@@ -26,13 +26,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="perfil.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="sidebar-text">PERFIL</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="perfil.php">
+                    <a class="nav-link" href="#">
                         <i class="fa-solid fa-message"></i>
                         <span class="sidebar-text">CHAT</span>
                     </a>
@@ -62,7 +62,7 @@
     <div id="leave-modal">
         <div id="modal-content">
             <h1>Sair da Conta</h1>
-            <p>Você tem certeza de que deseja sair? Ao sair, você não estará mais conectado à sua conta. Se você tiver alterações não salvas, elas serão perdidas.</p>
+            <p>"Tem certeza de que deseja sair? Você pode se reconectar a qualquer momento para continuar acessando nossos serviços de saúde."</p>
             <section>
                 <div id="wrapper-button">
                     <button onclick="handleModalLeave()" id="cancel-button" class="blue-button">Cancelar</button>

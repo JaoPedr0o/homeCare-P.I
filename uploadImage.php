@@ -12,36 +12,38 @@ if (!isset($_SESSION['id'])) {
 $userId = $_SESSION['id'];
 $userType = $_SESSION['tipo_usuario'];
 
+// Verifica se o tipo de usuário é válido
 if (!in_array($userType, ['pacientes', 'profissionais'])) {
     die("Tipo de usuário inválido: $userType");
 }
 
 if (isset($_POST['submit'])) {
-    $targetDir = "uploads/";
-    $targetFile = $targetDir . basename($_FILES["profileImage"]["name"]);
+    // Verifica se um arquivo de imagem foi enviado
+    if (isset($_FILES["profileImage"]) && getimagesize($_FILES["profileImage"]["tmp_name"])) {
+        // Lê o conteúdo do arquivo de imagem
+        $imageData = file_get_contents($_FILES["profileImage"]["tmp_name"]);
 
-    if (getimagesize($_FILES["profileImage"]["tmp_name"])) {
-        if (move_uploaded_file($_FILES["profileImage"]["tmp_name"], $targetFile)) {
-            $sql = ($userType == 'pacientes') 
-                ? "UPDATE pacientes SET profile_image = :profile_image WHERE id = :id"
-                : "UPDATE profissionais SET profile_image = :profile_image WHERE id = :id";
+        // Converte a imagem para Base64
+        $base64Image = base64_encode($imageData);
 
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':profile_image', $targetFile);
-            $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+        // Definir o SQL com base no tipo de usuário (pacientes ou profissionais)
+        $sql = ($userType == 'pacientes') 
+            ? "UPDATE pacientes SET profile_image = :profile_image WHERE id = :id"
+            : "UPDATE profissionais SET profile_image = :profile_image WHERE id = :id";
 
-            if ($stmt->execute()) {
-                // Redireciona para a página de confirmação
-                header("Location: confirmation.php?status=success");
-                exit();
-            } else {
-                // Em caso de erro, redireciona para a página de confirmação com uma mensagem de erro
-                header("Location: confirmation.php?status=error&message=" . urlencode(implode(", ", $stmt->errorInfo())));
-                exit();
-            }
+        // Prepara a consulta
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':profile_image', $base64Image);  // Insere a imagem em Base64
+        $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+
+        // Executa a consulta e verifica se foi bem-sucedida
+        if ($stmt->execute()) {
+            // Redireciona para uma página de confirmação com status de sucesso
+            header("Location: confirmation.php?status=success");
+            exit();
         } else {
-            // Redireciona para a página de confirmação em caso de erro ao mover o arquivo
-            header("Location: confirmation.php?status=error&message=" . urlencode("Erro ao enviar o arquivo."));
+            // Em caso de erro, redireciona com uma mensagem de erro
+            header("Location: confirmation.php?status=error&message=" . urlencode(implode(", ", $stmt->errorInfo())));
             exit();
         }
     } else {
