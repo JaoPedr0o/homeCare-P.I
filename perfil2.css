@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 80vw !important; 
+    max-width: 144rem !important; 
     padding: 1rem;
     display: flex;
     flex-direction: column;

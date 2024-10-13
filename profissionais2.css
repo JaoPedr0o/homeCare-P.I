@@ -1,0 +1,243 @@
+/* Definindo estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color) !important; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+}
+
+.container-fluid {
+    padding: 20px ;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.row {
+    width: 100%;
+    max-width: 144rem !important; /* Largura máxima para laptops */
+    display: flex;
+    justify-content: center; /* Centraliza a row */
+    
+}
+
+.main-content {
+    max-width: 144rem !important;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+    padding-top: 0rem !important;
+    position: relative;
+}
+
+/* Estilo para o título estilo LinkedIn */
+.titulo-linkedin {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0073b1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os cards de profissionais */
+.employee-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 144rem !important;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #dfe1e5; /* Bordas suaves no estilo LinkedIn */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px; /* Adiciona um espaçamento maior ao card */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Efeito de hover mais sutil */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Efeito de sombra no hover */
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img, .profile-img2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.card-text-container {
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+    color: #0073b1;
+}
+
+.card-text {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Estilo para o container do header */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Estilo para o título do header */
+
+.header-title {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    color: var(--white);
+    background: linear-gradient(290deg, var(--primary-blue) 70%, var(--white) 200%) !important;
+    height: 6rem;
+    text-align: left;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 1.5rem;
+}
+
+/* Estilo para o container de pesquisa */
+.search-container {
+    width: 100%;
+    padding: 0rem 1.2rem;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8rem;
+}
+
+/* Estilo para o dropdown (select) */
+#searchFilter {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; /* Bordas mais quadradas */
+    border: 1px solid #666; /* Cor do contorno */
+    outline: none;
+    background-color: var(--primary-blue); /* Fundo branco */
+    cursor: pointer;
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    transition: border-color 0.3s ease;
+    font-size: 1.6rem;
+}
+
+/* Estilo para a barra de pesquisa */
+#searchInput {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #666; /* Cor do contorno */
+    border-radius: 5px; /* Bordas mais quadradas */
+    font-size: 1rem;
+    background-color: #eFeFeF; /* Fundo branco */
+    outline: none;
+    transition: border-color 0.3s ease;
+    outline: none !important;
+    border: none !important; /* Remove a borda */
+    box-shadow: none !important; /* Remove a sombra (que inclui a borda azul claro) */
+    font-size: 1.6rem;
+}
+
+/* Efeito ao focar na barra de pesquisa */
+#searchInput:focus, 
+#searchFilter:focus {
+    border-color: #666; /* Cor do contorno ao focar */
+}
+
+/* Estilo para o dropdown ao focar */
+#searchFilter:focus {
+    border-color: #666; /* Cor do contorno ao focar */
+}
+
+
+/* Modal styling */
+.modal-body p {
+    font-size: 0.875rem;
+}
+
+.modal-title {
+    color: #0073b1;
+}
+
+#btnFecharModal {
+    background-color: #0073b1;
+    color: white;
+}
+
+#btnFecharModal:hover {
+    background-color: #005582;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 1200px) {
+    .employee-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%; /* Ajustar para não ter scroll horizontal */
+    }
+}
+
+@media (max-width: 992px) {
+    .employee-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas menores */
+    }
+
+    .card {
+        max-width: 320px; /* Largura ligeiramente reduzida */
+        padding: 15px; /* Reduz o padding para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .employee-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+
+    .card {
+        max-width: 100%; /* O card ocupará o espaço total */
+        padding: 15px; /* Reduz o padding em telas menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .employee-container {
+        grid-template-columns: 1fr; /* 1 card por linha em telas menores */
+        max-width: 100%;
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 10px; /* Menos padding em dispositivos móveis */
+    }
+}
