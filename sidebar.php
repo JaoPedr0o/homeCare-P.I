@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <div id="leave-modal">
+    <!-- <div id="leave-modal">
         <div id="modal-content">
             <h1>Sair da Conta</h1>
             <p>"Tem certeza de que deseja sair? Você pode se reconectar a qualquer momento para continuar acessando nossos serviços de saúde."</p>
@@ -70,7 +70,7 @@
                 </div>
             </section>
         </div>
-    </div>
+    </div> -->
 
     <script src="sidebar.js"></script>
     <script src="app.js"></script>

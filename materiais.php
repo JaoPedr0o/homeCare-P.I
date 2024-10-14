@@ -22,7 +22,7 @@
             ?>
             <div class="col-md-9 col-lg-10 main-content">
                 <!-- Conteúdo principal -->
-                <h1>MATERIAIS</h1>
+                <h1>Vital+ | Materias</h1>
             </div>
         </div>
     </div>

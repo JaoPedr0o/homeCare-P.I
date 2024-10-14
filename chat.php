@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Chat Interface</title>
+    <title>Vital+ | Mensagens</title>
     <link rel="stylesheet" href="chat.css">
     <link rel="stylesheet" href="style.global.css">
 </head>
