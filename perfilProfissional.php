@@ -56,11 +56,6 @@
                         <p>Rasputia Nogueira, nascida em 1988 em Belo Horizonte, é enfermeira formada pela Universidade Federal de Minas Gerais. Desde 2010, tem se dedicado ao atendimento de pacientes em diversas áreas de saúde, destacando-se por sua empatia e profissionalismo. Em 2015, recebeu o prêmio de "Enfermeira do Ano" pelo Hospital das Clínicas de Belo Horizonte.</p>
                         <div>
                             <a href="editarPerfilProfissional.php" style="text-decoration: none;"><button class="btn_edit">Editar Meus Dados</button></a>
-                            <form action="startChat.php" method="POST">
-                                <input type="hidden" name="professional_id" value="1"> <!-- ID do profissional -->
-                                <input type="hidden" name="patient_id" value="2"> <!-- ID do paciente logado -->
-                                <button class="btn_edit" type="submit">Iniciar Chat</button>
-                            </form>
                         </div>
                     </section>
 

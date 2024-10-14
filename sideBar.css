@@ -106,27 +106,31 @@
 }
 
 /* Modal de Logout*/
-#leave-modal {
-    position: absolute;
-    visibility: hidden;
+/*#leave-modal {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--shadow-color);
+    background-color: rgba(0, 0, 0, 0.5); 
+    visibility: hidden; /*
     z-index: 999;
+    overflow: hidden; 
 }
-    
+
 #modal-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-top: 2rem solid var(--primary-blue);
     background-color: var(--white);
     padding: 2rem;
     width: 50rem;
     height: 30rem;
+    border-top: 2rem solid var(--primary-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 #modal-content p {
@@ -148,7 +152,8 @@
 
 #wrapper-button button {
     width: 49%;
-}
+}*/
+
 
 
 @media (min-width: 0) and (max-width: 1024px) {

@@ -49,7 +49,7 @@
                         <span class="sidebar-text">MATERIAIS</span>
                     </a>
                 </li>
-                <li class="nav-item" onclick="handleModalLeave()">
+                <li class="nav-item" onclick="handleLogout()">
                     <a class="nav-link">
                         <i class="fa-solid fa-power-off settings"></i>
                         <span class="sidebar-text">SAIR</span>
