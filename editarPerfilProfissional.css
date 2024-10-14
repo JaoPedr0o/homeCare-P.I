@@ -32,7 +32,7 @@ body {
     padding: 0rem 0rem 2rem 0rem !important;
     box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
     display: flex;
-    max-width: 80vw !important; 
+    max-width: 118.3rem !important; 
     flex-direction: column;
     justify-content: space-between;
     overflow-y: hidden;
@@ -300,7 +300,7 @@ input[type="range"]::-moz-range-thumb {
 @media (min-width: 768px) {
     .container {
         max-width: 60vw;
-        margin-top: 5.5rem !important;
+        margin-top: 1rem !important;
         margin-bottom: 2rem !important;
     }
 }

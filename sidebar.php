@@ -26,13 +26,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="perfil.php">
+                    <a class="nav-link" href="perfilProfissional.php">
                         <i class="fa-solid fa-user"></i>
                         <span class="sidebar-text">PERFIL</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="chat.php">
                         <i class="fa-solid fa-message"></i>
                         <span class="sidebar-text">CHAT</span>
                     </a>

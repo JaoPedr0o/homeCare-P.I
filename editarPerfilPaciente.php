@@ -16,7 +16,7 @@ $profileImage = getProfileImage();
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.global.css">
-    <link rel="stylesheet" type="text/css" href="editarPerfilProfissional.css">
+    <link rel="stylesheet" type="text/css" href="editarPerfilProfissional2.css">
     <style>
         .input-data[type="date"] {
             width: 100%; /* Preencher a largura da div */

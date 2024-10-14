@@ -1,7 +1,36 @@
-<?php 
+<?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     require 'protect.php';
     require 'getProfileImage.php';
-    $profileImage = getProfileImage();
+
+    // Conectar ao banco de dados
+    include './config.php';
+
+    // Verifica se o parâmetro 'id' foi passado na URL
+    if (isset($_GET['id'])) {
+        $professional_id = $_GET['id'];
+        
+        // Busca os dados do profissional no banco de dados
+        $query = "SELECT * FROM profissionais WHERE id = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$professional_id]);
+        
+        // Obtenha o resultado
+        $professional = $stmt->fetch(PDO::FETCH_ASSOC); // Fetch the associative array
+        
+        if ($professional) { // Verifica se o profissional foi encontrado
+            $profileImage = getProfileImage($professional['profile_image']);
+        } else {
+            echo "Profissional não encontrado.";
+            exit;
+        }
+    } else {
+        echo "ID de profissional não fornecido.";
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,7 +38,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Perfil de <?php echo htmlspecialchars($professional['name']); ?></title>
     
     <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
     
@@ -25,7 +54,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
           rel="stylesheet">
     
-    <link rel="stylesheet" href="perfil2.css">
+    <link rel="stylesheet" href="perfilProfissional.css">
     <link rel="stylesheet" href="style.global.css">
 </head>
 
@@ -39,46 +68,50 @@
     <main>
         <div class="container">
             <header class="header">
-                <div class="header-imgs">
-                    <img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">
-                    <?php if ($profileImage): ?>
-                        <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
-                    <?php else: ?>
-                        <img id="perfil-img" src="assets/defaultAvatar.png" alt="Imagem de Perfil" style="max-width: 200px;">
-                    <?php endif; ?>
-                </div>
-
+            <div class="header-imgs">
+                <img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">
+                <?php if (isset($professional['profile_image'])): ?>
+                    <img src="data:image/jpeg;base64,<?php echo htmlspecialchars($professional['profile_image']); ?>" alt="Foto de Perfil" id="perfil-img" style="max-width: 200px;">
+                <?php else: ?>
+                    <img id="perfil-img" src="assets/defaultAvatar.png" alt="Imagem de Perfil" style="max-width: 200px;">
+                <?php endif; ?>
+            </div>
                 <div class="header-details">
                     
                     <section class="about-content">
-                        <h1>Rasputia Nogueira</h1>
-                        <h3>Cuidadora</h3>
-                        <p>Rasputia Nogueira, nascida em 1988 em Belo Horizonte, é enfermeira formada pela Universidade Federal de Minas Gerais. Desde 2010, tem se dedicado ao atendimento de pacientes em diversas áreas de saúde, destacando-se por sua empatia e profissionalismo. Em 2015, recebeu o prêmio de "Enfermeira do Ano" pelo Hospital das Clínicas de Belo Horizonte.</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="editarPerfilProfissional.php" style="text-decoration: none;"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
+                        <h1><?php echo htmlspecialchars($professional['nome']); ?></h1>
+                        <h3>Profissional</h3>
+                        <!--<p><?php echo htmlspecialchars($professional['description']); ?></p>-->
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aut dignissimos aliquam fuga quos, labore assumenda autem distinctio. Aut praesentium officiis molestiae temporibus sequi incidunt laborum possimus facilis excepturi totam.</p>
+                        <div>
+                            <form action="startChat.php" method="POST">
+                                <input type="hidden" name="professional_id" value="<?php echo $professional['id']; ?>"> 
+                                <input type="hidden" name="patient_id" value="2"> <!-- ID do paciente logado -->
+                                <button class="btn_edit" type="submit">Iniciar Chat</button>
+                            </form>
                         </div>
                     </section>
 
                     <aside class="info">
                         <div class="item">
                             <h3>Estado</h3>
-                            <p>Minas Gerais, MG</p>
+                            <!--<p><?php echo htmlspecialchars($professional['state']); ?></p>--><p>Vem do banco</p>
                         </div>
                         <div class="item">
                             <h3>Cidade</h3>
-                            <p>Patos de Minas</p>
+                            <!--<p><?php echo htmlspecialchars($professional['city']); ?></p>--><p>Vem do banco</p>
                         </div>
                         <div class="item">
                             <h3>Bairro</h3>
-                            <p>Jardim Esperança</p>
+                            <!--<p><?php echo htmlspecialchars($professional['neighborhood']); ?></p>--><p>Vem do banco</p>
                         </div>
                         <div class="item">
                             <h3>Escolaridade</h3>
-                            <p>Superior em enfermagem</p>
+                            <!--<p><?php echo htmlspecialchars($professional['education']); ?></p>--><p>Vem do banco</p>
                         </div>
                         <div class="item">
                             <h3>Gênero</h3>
-                            <p>Feminino</p>
+                            <!--<p><?php echo htmlspecialchars($professional['gender']); ?></p>--><p>Vem do banco</p>
                         </div>
                     </aside>
                 </div>
@@ -115,7 +148,8 @@
 
                 <div class="resume">
                     <h2>Resumo Profissional</h2>
-                    <p>Estágio de dois anos no Hospital Nossa Senhora de Fátima, onde desenvolvi habilidades em administração de medicamentos, monitoramento de sinais específicos e assistência em procedimentos médicos. Experiência em diferentes áreas como emergência e UTI, além de competências em comunicação com pacientes.</p>
+                    <!--<p><?php echo htmlspecialchars($professional['resumo']); ?></p>-->
+                    <p>Aqui deve vir o resumo do banco, não coloquei por que não estou com o banco completo</p>
                 </div>
             </section> 
             
