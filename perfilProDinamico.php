@@ -38,7 +38,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de <?php echo htmlspecialchars($professional['name']); ?></title>
+    <title>Perfil de <?php echo htmlspecialchars($professional['nome']); ?></title>
     
     <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
     
@@ -80,9 +80,8 @@
                     
                     <section class="about-content">
                         <h1><?php echo htmlspecialchars($professional['nome']); ?></h1>
-                        <h3>Profissional</h3>
-                        <!--<p><?php echo htmlspecialchars($professional['description']); ?></p>-->
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aut dignissimos aliquam fuga quos, labore assumenda autem distinctio. Aut praesentium officiis molestiae temporibus sequi incidunt laborum possimus facilis excepturi totam.</p>
+                        <h3><?php echo htmlspecialchars($professional['profissao']); ?></h3>
+                        <p><?php echo htmlspecialchars($professional['descricao']); ?></p>
                         <div>
                             <form action="startChat.php" method="POST">
                                 <input type="hidden" name="professional_id" value="<?php echo $professional['id']; ?>"> 
@@ -95,23 +94,23 @@
                     <aside class="info">
                         <div class="item">
                             <h3>Estado</h3>
-                            <!--<p><?php echo htmlspecialchars($professional['state']); ?></p>--><p>Vem do banco</p>
+                            <p><?php echo htmlspecialchars($professional['estado']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Cidade</h3>
-                            <!--<p><?php echo htmlspecialchars($professional['city']); ?></p>--><p>Vem do banco</p>
+                            <p><?php echo htmlspecialchars($professional['cidade']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Bairro</h3>
-                            <!--<p><?php echo htmlspecialchars($professional['neighborhood']); ?></p>--><p>Vem do banco</p>
+                            <p><?php echo htmlspecialchars($professional['bairro']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Escolaridade</h3>
-                            <!--<p><?php echo htmlspecialchars($professional['education']); ?></p>--><p>Vem do banco</p>
+                            <p><?php echo htmlspecialchars($professional['escolaridade']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Gênero</h3>
-                            <!--<p><?php echo htmlspecialchars($professional['gender']); ?></p>--><p>Vem do banco</p>
+                            <p><?php echo htmlspecialchars($professional['sexo']); ?></p>
                         </div>
                     </aside>
                 </div>
@@ -123,34 +122,32 @@
                     <div class="skill">
                         <h3>Boa Comunicação</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($professional['comunicacao_exp']); ?>0%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <h3>Cuidados de Enfermagem</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($professional['enfermagem_exp']); ?>0%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <h3>Uso de Equipamentos Médicos</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($professional['equipamentos_exp']); ?>0%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <h3>Educação ao Paciente</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($professional['educacao_exp']); ?>0%;"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="resume">
                     <h2>Resumo Profissional</h2>
-                    <!--<p><?php echo htmlspecialchars($professional['resumo']); ?></p>-->
-                    <p>Aqui deve vir o resumo do banco, não coloquei por que não estou com o banco completo</p>
-                </div>
+                    <p><?php echo htmlspecialchars($professional['resumo']); ?></p>             </div>
             </section> 
             
         </div>

@@ -194,7 +194,6 @@ body {
 .progress .bar {
     height: 100%;
     background-color: var(--primary-blue); 
-    width: 80%;
 }
 
 .resume p {

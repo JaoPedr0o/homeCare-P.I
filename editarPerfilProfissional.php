@@ -32,7 +32,7 @@ $profileImage = getProfileImage();
         <div class="container">
             <!-- Título da Página -->
             <h1 class="page-title">
-                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-user-pen"></i>
                 Meus Dados
             </h1>
             <div class="editPerfilImg">
@@ -97,8 +97,8 @@ $profileImage = getProfileImage();
                         <label for="profissao" class="label">Área de Atuação</label>
                         <select class="form-select" id="profissao" name="profissao">
                             <option value="nda">Selecione sua Área:</option>
-                            <option value="enfermeiro">Enfermeiro(a)</option>
-                            <option value="cuidador">Cuidador(a)</option>
+                            <option value="Enfermeiro">Enfermeiro(a)</option>
+                            <option value="Cuidador">Cuidador(a)</option>
                         </select>
                     </div>
 
@@ -122,13 +122,13 @@ $profileImage = getProfileImage();
                     <div class="col">
                         <label class="label" for="comunicacao">Habilidade de Comunicação</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="comunicacao_exp" name="comunicacao_exp">
                         </div>
                     </div>
                     <div class="col">
                         <label class="label" for="comunicacao">Cuidados de Enfermagem</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="enfermagem_exp" name="enfermagem_exp">
                         </div>
                     </div>
                 </div>
@@ -137,13 +137,13 @@ $profileImage = getProfileImage();
                     <div class="col">
                         <label class="label" for="equipamentos">Uso de Equipamentos Médicos</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="equipamentos_exp" name="equipamentos_exp">
                         </div>
                     </div>
                     <div class="col">
                         <label class="label" for="educacao">Educação ao Paciente</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
+                            <input type="range" min="0" max="10" value="0" class="slider" id="educacao_exp" name="educacao_exp">
                         </div>
                     </div>
                 </div>

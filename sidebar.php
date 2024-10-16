@@ -38,8 +38,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="pacientes.php">
+                        <i class="fa-solid fa-user-injured"></i>
+                        <span class="sidebar-text">PACIENTES</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="profissionais.php">
-                        <i class="fa-solid fa-notes-medical"></i>
+                        <i class="fa-solid fa-user-nurse"></i>
                         <span class="sidebar-text">PROFISSIONAIS</span>
                     </a>
                 </li>

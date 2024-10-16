@@ -2,6 +2,50 @@
     require 'protect.php';
     require 'getProfileImage.php';
     $profileImage = getProfileImage();
+
+// Função para pegar os dados do perfil
+function getProfileData() {
+    global $pdo;
+
+    // Inicia a sessão se ainda não foi iniciada
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // Verifica se o ID do usuário e o tipo de usuário estão definidos na sessão
+    if (!isset($_SESSION['id']) || !isset($_SESSION['tipo_usuario'])) {
+        return null; // Retorna null se não estiver autenticado
+    }
+
+    $userId = $_SESSION['id'];           // ID do usuário logado
+    $userType = $_SESSION['tipo_usuario']; // Tipo do usuário (paciente ou profissional)
+
+    // Verifica se o usuário logado é um profissional
+    if ($userType !== 'profissionais') {
+        // Exibe erro ou redireciona se o usuário não for um profissional
+        echo "Erro: Apenas profissionais podem acessar esta página.";
+        exit; // Para a execução do script
+    }
+
+    // Consulta para obter todos os dados do profissional
+    $sql = "SELECT * FROM profissionais WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC); // Retorna todos os dados do profissional
+}
+
+// Obtém os dados do perfil do profissional
+$userData = getProfileData();
+
+// Verifica se os dados do profissional foram encontrados
+if (!$userData) {
+    echo "Profissional não encontrado.";
+    exit;
+}
+
+// Obtém a imagem de perfil no formato Base64
+$profileImage = isset($userData['profile_image']) ? 'data:image/jpeg;base64,' . $userData['profile_image'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,9 +95,9 @@
                 <div class="header-details">
                     
                     <section class="about-content">
-                        <h1>Rasputia Nogueira</h1>
-                        <h3>Cuidadora</h3>
-                        <p>Rasputia Nogueira, nascida em 1988 em Belo Horizonte, é enfermeira formada pela Universidade Federal de Minas Gerais. Desde 2010, tem se dedicado ao atendimento de pacientes em diversas áreas de saúde, destacando-se por sua empatia e profissionalismo. Em 2015, recebeu o prêmio de "Enfermeira do Ano" pelo Hospital das Clínicas de Belo Horizonte.</p>
+                        <h1><?php echo htmlspecialchars($userData['nome']); ?></h1>
+                        <h3><?php echo htmlspecialchars($userData['profissao']); ?></h3>
+                        <p><?php echo htmlspecialchars($userData['descricao']); ?></p>
                         <div>
                             <a href="editarPerfilProfissional.php" style="text-decoration: none;"><button class="btn_edit">Editar Meus Dados</button></a>
                         </div>
@@ -62,23 +106,23 @@
                     <aside class="info">
                         <div class="item">
                             <h3>Estado</h3>
-                            <p>Minas Gerais, MG</p>
+                            <p><?php echo htmlspecialchars($userData['estado']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Cidade</h3>
-                            <p>Patos de Minas</p>
+                            <p><?php echo htmlspecialchars($userData['cidade']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Bairro</h3>
-                            <p>Jardim Esperança</p>
+                            <p><?php echo htmlspecialchars($userData['bairro']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Escolaridade</h3>
-                            <p>Superior em enfermagem</p>
+                            <p><?php echo htmlspecialchars($userData['escolaridade']); ?></p>
                         </div>
                         <div class="item">
                             <h3>Gênero</h3>
-                            <p>Feminino</p>
+                            <p><?php echo htmlspecialchars($userData['sexo']); ?></p>
                         </div>
                     </aside>
                 </div>
@@ -90,32 +134,32 @@
                     <div class="skill">
                         <h3>Boa Comunicação</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($userData['comunicacao_exp']); ?>0%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <h3>Cuidados de Enfermagem</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($userData['enfermagem_exp']); ?>0%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <h3>Uso de Equipamentos Médicos</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($userData['equipamentos_exp']); ?>0%;"></div>
                         </div>
                     </div>
                     <div class="skill">
                         <h3>Educação ao Paciente</h3>
                         <div class="progress">
-                            <div class="bar"></div>
+                            <div class="bar" style="width: <?php echo htmlspecialchars($userData['educacao_exp']); ?>0%;"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="resume">
                     <h2>Resumo Profissional</h2>
-                    <p>Estágio de dois anos no Hospital Nossa Senhora de Fátima, onde desenvolvi habilidades em administração de medicamentos, monitoramento de sinais específicos e assistência em procedimentos médicos. Experiência em diferentes áreas como emergência e UTI, além de competências em comunicação com pacientes.</p>
+                    <p><?php echo htmlspecialchars($userData['resumo']); ?></p>                
                 </div>
             </section> 
             
