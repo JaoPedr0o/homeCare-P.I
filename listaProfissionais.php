@@ -60,7 +60,7 @@ try {
                                 // Verifica se algum campo necessário está vazio
                                 $fieldsIncomplete = empty($profissional['nome']) || empty($profissional['sexo']) || empty($profissional['email']) || empty($profissional['estado']) || empty($profissional['coren']);
                             ?>
-                            <a href="<?php echo $fieldsIncomplete ? '#' : 'perfilProDinamico.php?id=' . htmlspecialchars($profissional['id']); ?>" class="card" <?php echo $fieldsIncomplete ? 'data-incomplete="true"' : ''; ?>>
+                            <a href="<?php echo 'perfilProDinamico.php?id=' . htmlspecialchars($profissional['id']); ?>" class="card" <?php echo $fieldsIncomplete ? 'data-incomplete="true"' : ''; ?>>
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <?php if (!empty($profissional['profile_image'])): ?>
                                         <img src="data:image/jpeg;base64,<?php echo htmlspecialchars($profissional['profile_image']); ?>" alt="Foto de Perfil" class="profile-img">
@@ -85,7 +85,7 @@ try {
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal 
     <div class="modal fade" id="accessDeniedModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="border-radius: 0rem !important; border-top: 2rem solid #3D7C89"> 
@@ -100,7 +100,7 @@ try {
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <script>
         window.onload = function() {

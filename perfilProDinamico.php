@@ -83,11 +83,10 @@
                         <h3><?php echo htmlspecialchars($professional['profissao']); ?></h3>
                         <p><?php echo htmlspecialchars($professional['descricao']); ?></p>
                         <div>
-                            <form action="startChat.php" method="POST">
-                                <input type="hidden" name="professional_id" value="<?php echo $professional['id']; ?>"> 
-                                <input type="hidden" name="patient_id" value="2"> <!-- ID do paciente logado -->
-                                <button class="btn_edit" type="submit">Iniciar Chat</button>
-                            </form>
+                        <form action="chatStart.php" method="POST">
+                            <input type="hidden" name="professional_id" value="<?php echo $professional['id']; ?>"> 
+                            <button class="btn_edit" type="submit">Iniciar Chat</button>
+                        </form>
                         </div>
                     </section>
 

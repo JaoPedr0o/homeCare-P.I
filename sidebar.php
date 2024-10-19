@@ -38,21 +38,21 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pacientes.php">
+                    <a class="nav-link" href="listaPacientes.php">
                         <i class="fa-solid fa-user-injured"></i>
                         <span class="sidebar-text">PACIENTES</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profissionais.php">
+                    <a class="nav-link" href="listaProfissionais.php">
                         <i class="fa-solid fa-user-nurse"></i>
                         <span class="sidebar-text">PROFISSIONAIS</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="materiais.php">
-                        <i class="fa-solid fa-shop"></i>
-                        <span class="sidebar-text">MATERIAIS</span>
+                        <i class="fa-solid fa-crown"></i>
+                        <span class="sidebar-text">Assinar</span>
                     </a>
                 </li>
                 <li class="nav-item" onclick="handleLogout()">
