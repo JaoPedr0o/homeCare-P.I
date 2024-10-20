@@ -55,7 +55,7 @@ $profileImage = isset($userData['profile_image']) ? 'data:image/jpeg;base64,' . 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vital+ | Perfil</title>
     
-    <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
           rel="stylesheet" 

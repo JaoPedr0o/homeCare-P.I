@@ -26,7 +26,7 @@ try {
     <title>Vital+ | Profissionais</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
     <link rel="stylesheet" href="profissionais.css">
     <link rel="stylesheet" href="style.global.css">
 </head>
