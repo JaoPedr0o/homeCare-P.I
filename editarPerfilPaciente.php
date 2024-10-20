@@ -62,7 +62,7 @@ $profileImage = getProfileImage();
                 </form>
             </div>
 
-            <form action="guardarinfo.php" id="data-form" method="POST">
+            <form action="guardarinfoPaciente.php" id="data-form" method="POST">
                 <div class="form-description">
                     <!-- Descrição Pessoal -->
                     <div class="user-description">
@@ -117,11 +117,11 @@ $profileImage = getProfileImage();
                         <label for="escolaridade" class="label">Com quantas pessoas mora?</label>
                         <select class="form-select" id="familia" name="familia" required>
                             <option value="nda">Selecione com quantas pessoas mora:</option>
-                            <option value="Ensino Fundamental">Moro sozinho</option>
-                            <option value="Ensino Médio">1 pessoa</option>
-                            <option value="Ensino Superior">2 pessoas</option>
-                            <option value="Ensino Fundamental Incompleto">3 pessoas</option>
-                            <option value="Ensino Médio Incompleto">4 ou mais pessoas</option>
+                            <option value="Sozinho">Moro sozinho</option>
+                            <option value="Uma Pessoa">1 pessoa</option>
+                            <option value="Duas Pessoas">2 pessoas</option>
+                            <option value="Três Pessoas">3 pessoas</option>
+                            <option value="Quatro pessoas ou mais">4 ou mais pessoas</option>
                         </select>
                     </div>
                 </div>
@@ -140,8 +140,8 @@ $profileImage = getProfileImage();
                         </select>
                     </div>
                     <div class="select">
-                        <label for="data" class="label">Selecione sua data de nascimento:</label>
-                        <input class="input-data" type="date" id="data" name="data">
+                        <label for="data" class="label">Nos Informe a Idade do Paciente:</label>
+                        <input class="input-data" type="number" id="data" name="idade">
                     </div>
                 </div>
                 <div></div>

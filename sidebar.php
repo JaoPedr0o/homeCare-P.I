@@ -56,12 +56,6 @@ $user_type = $_SESSION['tipo_usuario'] ?? null; // Verifica se 'tipo_usuario' es
                             <span class="sidebar-text">CHAT</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="assinatura.php">
-                            <i class="fa-solid fa-crown"></i>
-                            <span class="sidebar-text">ASSINATURA</span>
-                        </a>
-                    </li>
                 <?php elseif ($user_type === 'pacientes'): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="perfilPaciente.php">
@@ -82,13 +76,33 @@ $user_type = $_SESSION['tipo_usuario'] ?? null; // Verifica se 'tipo_usuario' es
                         </a>
                     </li>
                 <?php endif; ?>
-                <li class="nav-item" onclick="handleLogout()">
+                <li class="nav-item" data-bs-toggle="modal" data-bs-target="#settingsModal">
                     <a class="nav-link">
-                        <i class="fa-solid fa-power-off settings"></i>
-                        <span class="sidebar-text">SAIR</span>
+                        <i class="fa-solid fa-gear settings"></i>
+                        <span class="sidebar-text">CONFIGURAÇÕES</span>
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Modal de Configurações -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel"><i class="fa-solid fa-gear settings"></i> CONFIGURAÇÕES</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item modal-text-red" onclick="deleteAccount()">Excluir Conta</li>
+                        <li class="list-group-item modal-text-blue" onclick="support()">Suporte</li>
+                        <li class="list-group-item modal-text-blue" onclick="toggleTheme()">Modificar Tema</li>
+                        <li class="list-group-item modal-text-blue" onclick="logout()">Sair</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
