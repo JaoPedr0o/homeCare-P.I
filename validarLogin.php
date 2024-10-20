@@ -36,7 +36,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
             header("Location: telaInicial.php");
             exit;
         } else {
-            $erro = "[ERRO!] Senha ou E-mail incorretos!";
+            $erro = "Senha ou E-mail incorretos!";
         }
     }
 }
@@ -52,7 +52,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         <title><?php echo $erro ? "Erro: $erro" : "Necessário Login"; ?></title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
-        <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
         <script src="js/jquery-3.7.1.js" type="text/javascript"></script>
@@ -61,13 +61,18 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     </head>
     <body>
         <!-- Mensagem de aviso -->
+        <div class="logo">
+            <img class="imgPrincipal" src="loginIMG/logo-transparente.png" alt="" />
+            Vital+
+        </div>
         <h2 class="aviso">
-            Você não pode acessar essa página, 
+            <img src="assets/passwordIncorrect.png" alt="">
+            Você não pode acessar essa página 
             <?php 
             if ($erro) {
-                echo "<br>pois: $erro";
+                echo "<br>$erro";
             } else {
-                echo "<br>pois não está logado.";
+                echo "<br>Você não está logado.";
             }
             ?>
         </h2>

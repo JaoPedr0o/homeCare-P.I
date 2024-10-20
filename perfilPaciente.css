@@ -9,14 +9,13 @@ body {
 }
 
 .container {
-    max-width: 120rem !important; 
     padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
 .header {
-    width: 100%;
+    max-width: 120rem !important; 
     box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
     background-color: var(--white);
 }
