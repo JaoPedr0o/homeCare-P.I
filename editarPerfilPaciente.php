@@ -141,7 +141,7 @@ $profileImage = getProfileImage();
                     </div>
                     <div class="select">
                         <label for="data" class="label">Nos Informe a Idade do Paciente:</label>
-                        <input class="input-data" type="number" id="data" name="idade">
+                        <input class="form-control" type="number" id="data" name="idade">
                     </div>
                 </div>
                 <div></div>

@@ -1,5 +1,5 @@
 <?php 
-    require 'protect.php';
+    //require 'protect.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

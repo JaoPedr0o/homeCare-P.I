@@ -30,7 +30,4 @@ selectCat.addEventListener('change', () => {
 })
 
 //Para limpar o formulário
-window.addEventListener('load', () => {
-    const formulario = document.getElementById('formCad');
-    formulario.reset(); // Limpa o formulário
-});
+
