@@ -40,7 +40,7 @@
         <div class="container">
             <header class="header">
                 <div class="header-imgs">
-                    <!--<img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">-->
+                    <img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">
                     <?php if ($profileImage): ?>
                         <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
                     <?php else: ?>
