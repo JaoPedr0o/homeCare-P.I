@@ -53,9 +53,9 @@ $user_type = $_SESSION['tipo_usuario'];
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="materiais.php">
+                        <a class="nav-link" href="assinatura.php">
                             <i class="fa-solid fa-crown"></i>
-                            <span class="sidebar-text">Assinar</span>
+                            <span class="sidebar-text">ASSINATURA</span>
                         </a>
                     </li>
                 <?php elseif ($user_type === 'pacientes'): ?>

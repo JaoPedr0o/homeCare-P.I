@@ -30,7 +30,7 @@ $conversations = $stmt->fetchAll(PDO::FETCH_ASSOC); // Obtém todas as conversas
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vital+ | Mensagens</title>
-    <link rel="stylesheet" href="chat2.css">
+    <link rel="stylesheet" href="chat.css">
     <link rel="stylesheet" href="style.global.css">
     <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
