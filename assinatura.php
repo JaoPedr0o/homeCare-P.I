@@ -16,7 +16,7 @@
     <div class="txtinicial">
       <p class="txt1">O Vital+ conecta famílias a profissionais da saúde qualificados, oferecendo cuidados práticos e seguros para idosos.</p>
       <p class="preco">R$11,90 Mensal </p>
-      <a class="btn rounded-1 btn-lg" style="width: 200px" href="https://mpago.la/2FM7JGo" role="button">Assinar</a>
+      <a class="btn rounded-1 btn-lg" style="width: 200px" href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c9380849295664c0192ab2ce4d50688" role="button">Assinar</a>
       <p></p>
     </div>
     <div class="txtbaixo">
