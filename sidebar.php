@@ -1,8 +1,12 @@
 <?php
-session_start();
+// Verificar se a sessão já está ativa
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require 'config.php';
 
-$user_type = $_SESSION['tipo_usuario'];
+$user_type = $_SESSION['tipo_usuario'] ?? null; // Verifica se 'tipo_usuario' está setado para evitar erros.
 ?>
 
 <!DOCTYPE html>
