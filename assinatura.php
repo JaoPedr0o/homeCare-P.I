@@ -15,13 +15,13 @@
   <div class="card" style="width: 21rem;">
     <div class="txtinicial">
       <p class="txt1">O Vital+ conecta famílias a profissionais da saúde qualificados, oferecendo cuidados práticos e seguros para idosos.</p>
-      <p class="preco">R$11,90 Mensal </p>
-      <a class="btn rounded-1 btn-lg" style="width: 200px" href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c9380849295664c0192ab2ce4d50688" role="button">Assinar</a>
+      <p class="preco">R$49,90 Anual </p>
+      <a class="btn rounded-1 btn-lg" style="width: 200px" href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c9380849295664c0192ab7a26810695" role="button">Assinar</a>
       <p></p>
     </div>
     <div class="txtbaixo">
       <p class="txt1">
-        Com a assinatura mensal para se integrar como profissional, você poderá auxiliar e encontrar variados pacientes,
+        Com a assinatura anual para se integrar como profissional, você poderá auxiliar e encontrar variados pacientes,
         podendo expandir sua experiência como profissional da saúde e também auxiliar seus pacientes de maneira mais fácil
         e rápida.
       </p>
