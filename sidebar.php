@@ -1,3 +1,14 @@
+<?php
+// Verificar se a sessão já está ativa
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require 'config.php';
+
+$user_type = $_SESSION['tipo_usuario'] ?? null; // Verifica se 'tipo_usuario' está setado para evitar erros.
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,6 +20,7 @@
     <script src="https://kit.fontawesome.com/2a79d52758.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="sideBar.css">
     <link rel="stylesheet" href="style.global.css">
+    <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
 </head>
 
 <body>
@@ -25,58 +37,74 @@
                         <span class="sidebar-text">INÍCIO</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="perfilProfissional.php">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="sidebar-text">PERFIL</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="chat.php">
-                        <i class="fa-solid fa-message"></i>
-                        <span class="sidebar-text">CHAT</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pacientes.php">
-                        <i class="fa-solid fa-user-injured"></i>
-                        <span class="sidebar-text">PACIENTES</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profissionais.php">
-                        <i class="fa-solid fa-user-nurse"></i>
-                        <span class="sidebar-text">PROFISSIONAIS</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="materiais.php">
-                        <i class="fa-solid fa-shop"></i>
-                        <span class="sidebar-text">MATERIAIS</span>
-                    </a>
-                </li>
-                <li class="nav-item" onclick="handleLogout()">
+                <?php if ($user_type === 'profissionais'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfilProfissional.php">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="sidebar-text">PERFIL</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listaPacientes.php">
+                            <i class="fa-solid fa-user-injured"></i>
+                            <span class="sidebar-text">PACIENTES</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.php">
+                            <i class="fa-solid fa-message"></i>
+                            <span class="sidebar-text">CHAT</span>
+                        </a>
+                    </li>
+                <?php elseif ($user_type === 'pacientes'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfilPaciente.php">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="sidebar-text">PERFIL</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listaProfissionais.php">
+                            <i class="fa-solid fa-user-nurse"></i>
+                            <span class="sidebar-text">PROFISSIONAIS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.php">
+                            <i class="fa-solid fa-message"></i>
+                            <span class="sidebar-text">CHAT</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <li class="nav-item" data-bs-toggle="modal" data-bs-target="#settingsModal">
                     <a class="nav-link">
-                        <i class="fa-solid fa-power-off settings"></i>
-                        <span class="sidebar-text">SAIR</span>
+                        <i class="fa-solid fa-gear settings"></i>
+                        <span class="sidebar-text">CONFIGURAÇÕES</span>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <!-- <div id="leave-modal">
-        <div id="modal-content">
-            <h1>Sair da Conta</h1>
-            <p>"Tem certeza de que deseja sair? Você pode se reconectar a qualquer momento para continuar acessando nossos serviços de saúde."</p>
-            <section>
-                <div id="wrapper-button">
-                    <button onclick="handleModalLeave()" id="cancel-button" class="blue-button">Cancelar</button>
-                    <button onclick="handleLogout()" class="red-button" id="confirm-button">Sair</button>
+    <!-- Modal de Configurações -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel"><i class="fa-solid fa-gear settings"></i> CONFIGURAÇÕES</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </section>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item modal-text-red" onclick="deleteAccount()">Excluir Conta</li>
+                        <li class="list-group-item modal-text-blue" onclick="support()">Suporte</li>
+                        <li class="list-group-item modal-text-blue" onclick="toggleTheme()">Modificar Tema</li>
+                        <li class="list-group-item modal-text-blue" onclick="logout()">Sair</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div> -->
+    </div>
 
     <script src="sidebar.js"></script>
     <script src="app.js"></script>

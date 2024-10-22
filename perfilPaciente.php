@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vital+ | Perfil</title>
 
-    <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
           rel="stylesheet" 
@@ -40,7 +40,7 @@
         <div class="container">
             <header class="header">
                 <div class="header-imgs">
-                    <!--<img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">-->
+                    <img id="banner-img" src="./assets/user-banner.png" alt="Foto de fundo">
                     <?php if ($profileImage): ?>
                         <img id="perfil-img" src="<?php echo htmlspecialchars($profileImage); ?>" alt="Imagem de Perfil" style="max-width: 200px;">
                     <?php else: ?>
@@ -55,7 +55,7 @@
                         <h3>Paciente</h3>
                         <p>Seu Antônio, 80 anos, é um ex-carpinteiro aposentado que adora jardinagem e contar histórias. Apaixonado por música e novelas, ele aprecia momentos com os netos. Com a idade, precisa de cuidados diários, como ajuda para se vestir e lembrar de tomar medicamentos. Seu maior sonho é continuar compartilhando suas memórias e aprender a usar um tablet para se conectar ainda mais com a família.</p>
                         <div class="d-flex justify-content-center">
-                            <a href="editarPerfilProfissional.php" style="text-decoration: none;"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
+                            <a href="editarPerfilPaciente.php" style="text-decoration: none;"><button class="d-flex btn_edit">Editar Meus Dados</button></a>
                         </div>
                     </section>
 
@@ -83,32 +83,10 @@
                     </aside>
                 </div>
                 <section class="skills-and-resume">
-                <div class="skills">
-                    <h2>Habilidades</h2>
-                    <div class="skill">
-                        <h3>Boa Comunicação</h3>
-                        <div class="progress">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h3>Cuidados de Enfermagem</h3>
-                        <div class="progress">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h3>Uso de Equipamentos Médicos</h3>
-                        <div class="progress">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <h3>Educação ao Paciente</h3>
-                        <div class="progress">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
+                <div class="resume">
+                    <h2>Informações Sobre Cuidados</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet unde quia quasi soluta exercitationem earum at dolorem reprehenderit ea nemo. Provident nobis sequi exercitationem quo ullam vero aliquam pariatur iure. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic itaque, repellat modi harum distinctio tenetur porro natus cumque beatae aperiam magnam veritatis ipsam maxime eius velit labore assumenda atque debitis!
+                    </p>
                 </div>
 
                 <div class="resume">

@@ -4,6 +4,10 @@
     font-size: 62.5%;
 }
 
+a {
+    text-decoration: none;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -106,22 +110,11 @@
 }
 
 /* Modal de Logout*/
-/*#leave-modal {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); 
-    visibility: hidden; /*
-    z-index: 999;
-    overflow: hidden; 
+#settingsModal {
+    background-color: var(--light-shadow-color) !important;
 }
 
-#modal-content {
+.modal-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -129,31 +122,66 @@
     padding: 2rem;
     width: 50rem;
     height: 30rem;
+    border-radius: 0.2rem;
     border-top: 2rem solid var(--primary-blue);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-#modal-content p {
+.modal-text-red {
+    border-radius: 0.2rem;
     font-size: var(--font-size-s3);
     text-align: justify;
+    margin: 0.2rem 0rem;
     background-color: #ffdadac9;
-    border: 0.1rem solid #fc5454c9;
-    border-right: 0.5rem solid #fc5454c9;
+    border: 0.1rem solid #aa2d2d;
+    border-right: 0.5rem solid #aa2d2d;
     padding: 1rem;
+    transition: all 0.3s;
     font-weight: bold;
-    color: var(--background-dark-color);
+    color: #aa2d2d;
+    cursor: pointer;
 }
 
-#wrapper-button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.modal-text-red:hover {
+    font-size: var(--font-size-s3);
+    text-align: justify;
+    margin: 0.2rem 0rem;
+    background-color: #ffdadac9;
+    border: 0.1rem solid #aa2d2d;
+    border-right: 0.5rem solid #aa2d2d;
+    padding: 1.2rem;
+    font-weight: bold;
+    color: #aa2d2d;
+    cursor: pointer;
 }
 
-#wrapper-button button {
-    width: 49%;
-}*/
+.modal-text-blue {
+    border-radius: 0.2rem;
+    font-size: var(--font-size-s3);
+    margin: 0.2rem 0rem;
+    text-align: justify;
+    background-color: #3d7c893b;
+    border: 0.1rem solid #3D7C89;
+    border-right: 0.5rem solid #3D7C89;
+    padding: 1rem;
+    transition: all 0.3s;
+    font-weight: bold;
+    color: #30616b;
+    cursor: pointer;
+}
 
+.modal-text-blue:hover {
+    font-size: var(--font-size-s3);
+    margin: 0.2rem 0rem;
+    text-align: justify;
+    background-color: #3d7c893b;
+    border: 0.1rem solid #3D7C89;
+    border-right: 0.5rem solid #3D7C89;
+    padding: 1.2rem 1rem;
+    font-weight: bold;
+    color: #30616b;
+    cursor: pointer;
+}
 
 
 @media (min-width: 0) and (max-width: 1024px) {

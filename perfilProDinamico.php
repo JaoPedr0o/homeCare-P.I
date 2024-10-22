@@ -40,7 +40,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de <?php echo htmlspecialchars($professional['nome']); ?></title>
     
-    <link rel="shortcut icon" href="loginIMG/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="loginIMG/logo-transparente.png" type="image/x-icon">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
           rel="stylesheet" 
@@ -83,11 +83,10 @@
                         <h3><?php echo htmlspecialchars($professional['profissao']); ?></h3>
                         <p><?php echo htmlspecialchars($professional['descricao']); ?></p>
                         <div>
-                            <form action="startChat.php" method="POST">
-                                <input type="hidden" name="professional_id" value="<?php echo $professional['id']; ?>"> 
-                                <input type="hidden" name="patient_id" value="2"> <!-- ID do paciente logado -->
-                                <button class="btn_edit" type="submit">Iniciar Chat</button>
-                            </form>
+                        <form action="chatStart.php" method="POST">
+                            <input type="hidden" name="professional_id" value="<?php echo $professional['id']; ?>"> 
+                            <button class="btn_edit" type="submit">Iniciar Chat</button>
+                        </form>
                         </div>
                     </section>
 
