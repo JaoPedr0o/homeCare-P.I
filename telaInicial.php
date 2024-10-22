@@ -182,7 +182,7 @@
                 <div>
                     <h5>Tela de Pacientes</h5>
                     <p>Visualize seus pacientes.</p>
-                    <a href="pacientes.php" class="btn btn-primary">Acessar Pacientes</a>
+                    <a href="listapacientes.php" class="btn btn-primary">Acessar Pacientes</a>
                 </div>
             </div>
         </div>
